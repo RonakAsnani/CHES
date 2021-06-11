@@ -9,6 +9,7 @@ import MainNavigation from './shared/Navigation/MainNavigation';
 
 
 import './App.css';
+import Home from "./shared/HomePage/Home";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <main>
         <Switch>
           <Route path="/" exact>
-
+            <Home />
           </Route>
           <Route path="/siphon" exact>
             siphon

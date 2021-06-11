@@ -19,6 +19,8 @@
     color: #292929;
     text-decoration: none;
     padding: 0.5rem;
+    transition: 0.7s;
+    border-radius: 5px;
   }
   
   .nav-links a:hover,
