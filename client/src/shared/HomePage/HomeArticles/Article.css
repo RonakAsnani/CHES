@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Ubuntu:wght@700&display=swap');
+
+.card-img{
+    border-radius: 15px;
+}
+
+.card-title{
+    font-family: Montserrat;
+    font-weight: 500;
+    color: #023047;
+    margin: 0;
+    font-size: 32px;
+}
+
+.card-body p {
+    margin-top: 13px;
+    color: #e76f51;
+    font-weight: 350;
+}
+
+.single-blog-button {
+  text-decoration: none;
+  color: #e76f51;
+  font-weight: 800;
+}

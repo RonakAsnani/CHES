@@ -16,7 +16,7 @@ const Banner = () => {
                 }}
             >
                 <div className="banner__contents">
-                    <h1 className="banner__title">
+                    <h5 className="banner__title">
                         <Typewriter
                             options={{
                                 loop: true,
@@ -32,9 +32,9 @@ const Banner = () => {
                                     .start();
                             }}
                         />
-                        </h1>
+                        </h5>
                 </div>
-                <div className="banner--fadeBottom" />
+                <div className="bannerFadeBottom" />
             </header>
         </React.Fragment>
     )
