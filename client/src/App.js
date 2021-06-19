@@ -1,16 +1,11 @@
-import React from "react"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import MainNavigation from './shared/Navigation/MainNavigation';
-import Footer from './shared/Footer/Footer';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import MainNavigation from "./shared/Navigation/MainNavigation";
+import Footer from "./shared/Footer/Footer";
 
-
-import './App.css';
+import "./App.css";
 import Home from "./shared/HomePage/Home";
+import Auth from "./shared/Auth/Auth";
 
 function App() {
   return (
@@ -33,9 +28,7 @@ function App() {
           <Route path="/about" exact>
             about
           </Route>
-          <Route path="/auth" exact>
-            auth
-          </Route>
+          <Route path="/auth" component={Auth} exact></Route>
         </Switch>
       </main>
       <Footer />
