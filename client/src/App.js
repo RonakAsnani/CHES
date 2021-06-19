@@ -6,6 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import MainNavigation from './shared/Navigation/MainNavigation';
+import Footer from './shared/Footer/Footer';
 
 
 import './App.css';
@@ -37,6 +38,7 @@ function App() {
           </Route>
         </Switch>
       </main>
+      <Footer />
     </Router>
   );
 }

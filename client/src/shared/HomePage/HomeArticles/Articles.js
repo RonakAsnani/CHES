@@ -7,7 +7,7 @@ import './Articles.css';
 const Articles = () => {
     return (
         <React.Fragment>
-            <div className="container" style={{ marginTop: "50px", marginBottom: "1000px" }}>
+            <div className="container" style={{ marginTop: "50px" }}>
                 <div className="row" style={{ marginBottom: "30px" }}>
                     <div className="col-lg-6 mx-auto text-center">
                         <h2 className="article-header">Latest Articles</h2>

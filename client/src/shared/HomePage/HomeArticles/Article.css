@@ -14,12 +14,12 @@
 
 .card-body p {
     margin-top: 13px;
-    color: #e76f51;
+    /* color: #e76f51; */
     font-weight: 350;
 }
 
 .single-blog-button {
   text-decoration: none;
-  color: #e76f51;
+  /* color: #e76f51; */
   font-weight: 800;
 }
