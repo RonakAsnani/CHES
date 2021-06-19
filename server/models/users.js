@@ -21,6 +21,9 @@ const userSchema = mongoose.Schema(
     selectedFile: {
       type: String,
     },
+    linkedIn: {
+      type: String,
+    },
   },
   {
     timestamps: true,

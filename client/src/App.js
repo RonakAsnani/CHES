@@ -6,6 +6,7 @@ import Footer from "./shared/Footer/Footer";
 import "./App.css";
 import Home from "./shared/HomePage/Home";
 import Auth from "./shared/Auth/Auth";
+import UserProfile from "./shared/UserProfile/UserProfile";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             about
           </Route>
           <Route path="/auth" component={Auth} exact></Route>
+          <Route path="/userProfile" component={UserProfile} exact></Route>
         </Switch>
       </main>
       <Footer />

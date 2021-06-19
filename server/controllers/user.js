@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../models/users.js";
+import mongoose from "mongoose";
 
 export const signin = async (req, res) => {
   console.log("wchj");
@@ -86,5 +87,46 @@ export const signup = async (req, res) => {
     return res.status(500).json({
       message: "Something went wrong",
     });
+  }
+};
+
+export const update = async (req, res) => {
+  try {
+    const { email, linkedIn, selectedFile, _id } = req.body;
+    //console.log(req.body);
+
+    const user = await User.findOne({ email });
+    //console.log(user);
+    if (!user) {
+      return res.status(404).send("No user exist with that id");
+    }
+    if (selectedFile == "") {
+      const updatedUser = await User.findOneAndUpdate(
+        { email },
+        {
+          linkedIn: linkedIn,
+        },
+        {
+          new: true,
+        }
+      );
+      res.json(updatedUser);
+    } else {
+      const updatedUser = await User.findOneAndUpdate(
+        { email },
+        {
+          linkedIn: linkedIn,
+          selectedFile: selectedFile,
+        },
+        {
+          new: true,
+        }
+      );
+      res.json(updatedUser);
+    }
+
+    //console.log(updatedUser);
+  } catch (error) {
+    console.log(error);
   }
 };
