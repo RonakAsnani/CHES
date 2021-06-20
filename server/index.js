@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import userRoutes from "./routes/users.js";
+import articleRoutes from './routes/articles.js';
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/user", userRoutes);
+app.use("/articles", articleRoutes);
 
 const CONNECTION_URL =
   "mongodb+srv://ChesDev:Siphon&Eureka6.2@cluster0.opzrd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";

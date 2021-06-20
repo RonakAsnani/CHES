@@ -22,7 +22,7 @@ const Banner = () => {
                                 loop: true,
                               }}
                             onInit={(typewriter) => {
-                                typewriter.typeString("WE ARE CHEMICAL ENGINEERING SOCIETY.")
+                                typewriter.typeString("WE ARE THE CHEMICAL ENGINEERING SOCIETY.")
                                     .pauseFor(2000)
                                     .deleteAll()
                                     .typeString('LEADING <strong>AICHE</strong> CHAPTER.')

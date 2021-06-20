@@ -7,6 +7,8 @@ import "./App.css";
 import Home from "./shared/HomePage/Home";
 import Auth from "./shared/Auth/Auth";
 import UserProfile from "./shared/UserProfile/UserProfile";
+import Blogs from '../src/Blogs/Blogs';
+import CreateBlog from "./Blogs/CreateBlog";
 
 function App() {
   return (
@@ -24,10 +26,13 @@ function App() {
             eureka
           </Route>
           <Route path="/blogs" exact>
-            blogs
+            <Blogs />
           </Route>
           <Route path="/about" exact>
             about
+          </Route>
+          <Route path="/blogs/create" exact>
+            <CreateBlog />
           </Route>
           <Route path="/auth" component={Auth} exact></Route>
           <Route path="/userProfile" component={UserProfile} exact></Route>
