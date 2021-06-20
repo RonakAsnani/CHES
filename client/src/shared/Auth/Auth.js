@@ -26,7 +26,7 @@ const initialState = {
   secretKey: "",
 };
 
-const Auth = () => {
+const Auth = (props) => {
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
@@ -38,8 +38,13 @@ const Auth = () => {
     e.preventDefault();
     if (isSignUp) {
       dispatch(signup(formData, history));
+      // const user = JSON.parse(localStorage.getItem("profile"));
+      // props.setUser(user);
+      history.push("/");
     } else {
       dispatch(signin(formData, history));
+      console.log(props);
+      history.push("/userProfile");
     }
   };
   const handleChange = (e) => {
