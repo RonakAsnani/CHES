@@ -1,10 +1,14 @@
 import React from 'react';
-import { CSSTransition } from 'react-transition-group';
+import { useSelector } from 'react-redux';
 
 import Article from './Article';
 import './Articles.css';
 
 const Articles = () => {
+
+    const articles = useSelector((state) => state.articles);
+    console.log(articles);
+
     return (
         <React.Fragment>
             <div className="container" style={{ marginTop: "50px" }}>
