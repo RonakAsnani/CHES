@@ -24,6 +24,12 @@ const userSchema = mongoose.Schema(
     linkedIn: {
       type: String,
     },
+    position: {
+      type: String,
+    },
+    batchOf: {
+      type: String,
+    },
   },
   {
     timestamps: true,
