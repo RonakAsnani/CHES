@@ -38,7 +38,7 @@ export const update = (userData) => async (dispatch) => {
   try {
     //console.log("hgcjhg");
     const data = await api.update(userData);
-    console.log(data, "jykjvykjv");
+    // console.log(data, "jykjvykjv");
     dispatch({
       type: UPDATE,
       data,

@@ -1,0 +1,12 @@
+.root1 {
+  min-width: 375px !important;
+  margin: 20px 10px;
+}
+.card-slider::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
+.card-slider {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

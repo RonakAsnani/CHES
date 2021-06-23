@@ -6,8 +6,10 @@ import Footer from "./shared/Footer/Footer";
 import "./App.css";
 import Home from "./shared/HomePage/Home";
 import Auth from "./shared/Auth/Auth";
+import About from "./shared/About/About";
+import Siphon from "./shared/siphon/Siphon";
 import UserProfile from "./shared/UserProfile/UserProfile";
-import Blogs from '../src/Blogs/Blogs';
+import Blogs from "../src/Blogs/Blogs";
 import CreateBlog from "./Blogs/CreateBlog";
 
 function App() {
@@ -19,18 +21,14 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/siphon" exact>
-            siphon
-          </Route>
-          <Route path="/eureka" exact>
+          <Route path="/siphon" component={Siphon} exact></Route>
+          {/* <Route path="/eureka" exact>
             eureka
-          </Route>
+          </Route> */}
           <Route path="/blogs" exact>
             <Blogs />
           </Route>
-          <Route path="/about" exact>
-            about
-          </Route>
+          <Route path="/about" component={About} exact></Route>
           <Route path="/blogs/create" exact>
             <CreateBlog />
           </Route>
