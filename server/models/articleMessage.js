@@ -1,15 +1,10 @@
 import mongoose from 'mongoose';
 
 const articleSchema = mongoose.Schema({
-    title: String,
-    message: String,
-    creator: String,
-    tags: [String],
-    selectedFile: String,
-    likeCount: {
-        type: Number,
-        default: 0
+    content: {
+        type: String,
     },
+    creator: String,
     createdAt: {
         type: Date,
         default: new Date()

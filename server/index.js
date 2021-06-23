@@ -14,6 +14,8 @@ app.use(cors());
 app.use("/user", userRoutes);
 app.use("/articles", articleRoutes);
 
+app.use('/uploads', express.static('../uploads'));
+
 const CONNECTION_URL =
   "mongodb+srv://ChesDev:Siphon&Eureka6.2@cluster0.opzrd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 5000;
