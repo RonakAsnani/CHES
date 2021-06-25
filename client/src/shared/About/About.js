@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import logo from "../../assets/images/CHES-LOGO-1.png";
 import NearMeIcon from "@material-ui/icons/NearMe";
+import meghal from "../../assets/images/profiles/Meghal.png";
 
 const useStyles = makeStyles({
   root: {
@@ -20,13 +21,19 @@ const useStyles = makeStyles({
   root1: {
     maxWidth: "85%",
     margin: "auto",
-    marginTop: "10px",
+    marginTop: "40px",
     marginBottom: "10px",
   },
   media: {
-    height: "70%",
-    width: "80%",
+    height: "20%",
+    width: "30%",
     margin: "auto",
+  },
+  media1: {
+    height: "170px",
+    width: "170px",
+    borderRadius: "50%",
+    margin: "5px auto",
   },
 });
 
@@ -64,6 +71,66 @@ export default function MediaCard() {
         </CardActionArea>
       </Card>
 
+      <h4
+        style={{
+          textAlign: "center",
+          marginTop: "105px",
+          marginBottom: "20px",
+        }}
+      >
+        Our Faculty Advisors
+      </h4>
+      <div className="row">
+        <div className="col-sm-12 col-md-4">
+          <Card style={{ margin: "0px 10px" }}>
+            <CardActionArea style={{ textAlign: "center" }}>
+              <img
+                className={classes.media1}
+                src={meghal}
+                alt="Contemplative Reptile"
+              />
+              <CardContent>
+                <h5>Dr. Meghal Desai</h5>
+                <p>Chairman</p>
+                <p>Associate Professor at ChED, SVNIT</p>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </div>
+
+        <div className="col-sm-12 col-md-4">
+          <Card style={{ margin: "0px 10px" }}>
+            <CardActionArea style={{ textAlign: "center" }}>
+              <img
+                className={classes.media1}
+                src={meghal}
+                alt="Contemplative Reptile"
+              />
+              <CardContent>
+                <h5>Dr. Meghal Desai</h5>
+                <p>Chairman</p>
+                <p>Associate Professor at ChED, SVNIT</p>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </div>
+        <div className="col-sm-12 col-md-4">
+          <Card style={{ margin: "0px 10px" }}>
+            <CardActionArea style={{ textAlign: "center" }}>
+              <img
+                className={classes.media1}
+                src={meghal}
+                alt="Contemplative Reptile"
+              />
+              <CardContent>
+                <h5>Dr. Meghal Desai</h5>
+                <p>Chairman</p>
+                <p>Associate Professor at ChED, SVNIT</p>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </div>
+      </div>
       <Card className={classes.root1}>
         <h4 style={{ textAlign: "center", marginTop: "5px" }}>Our Mission</h4>
 
