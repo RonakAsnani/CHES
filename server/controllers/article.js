@@ -47,3 +47,14 @@ export const deleteArticle = async (req, res) => {
     
     res.json({message: "Post Deleted"});
 }
+
+export const likeArticle = async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No article with that id');
+
+    const article = await ArticleMessage.findById(id);
+    const updatedArticle = await ArticleMessage.findByIdAndUpdate(id, { likeCount: article.likeCount + 1 }, { new: true });
+    
+    res.json(updatedArticle);
+}

@@ -44,3 +44,13 @@ export const deleteArticle = (id) => async (dispatch) => {
         console.log(error);
     }
 }
+
+export const likeArticle = (id) => async (dispatch) => {
+try {
+    const { data } = await api.likeArticle(id);
+
+        dispatch({ type: 'LIKE', payload: data });
+} catch (error) {
+    console.log(error);
+}
+}

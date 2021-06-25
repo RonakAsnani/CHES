@@ -1,5 +1,5 @@
 import express from 'express';
-import { getArticles, createArticle, updateArticle, deleteArticle } from '../controllers/article.js';
+import { getArticles, createArticle, updateArticle, deleteArticle, likeArticle } from '../controllers/article.js';
 import multer from "multer";
 
 const router = express.Router();
@@ -37,5 +37,6 @@ router.get('/', getArticles);
 router.post('/', createArticle);
 router.patch('/:id', updateArticle);
 router.delete('/:id', deleteArticle);
+router.patch('/:id/likeArticle', likeArticle)
 
 export default router;

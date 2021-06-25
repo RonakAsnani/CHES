@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
@@ -7,7 +7,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
 
-import { deleteArticle } from '../../actions/articles';
+import { deleteArticle, likeArticle } from '../../actions/articles';
 import useStyles from './styles';
 
 const Article = ({ article, setCurrentId }) => {
@@ -25,7 +25,7 @@ const Article = ({ article, setCurrentId }) => {
 
     const classes = useStyles();
     const content = truncate(`${article.message}`, 250);
-    console.log(article);
+
     return (
         <Card className={classes.card}>
             <CardMedia className={classes.media} image={article.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={article.title} />
@@ -47,7 +47,7 @@ const Article = ({ article, setCurrentId }) => {
                 </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" onClick={() => { }}><ThumbUpAltIcon fontSize="small" /> Like {article.likeCount} </Button>
+                <Button size="small" color="primary" onClick={() => dispatch(likeArticle(article._id))}><ThumbUpAltIcon fontSize="small" /> Like {article.likeCount} </Button>
                 <Button size="small" color="primary" onClick={() => dispatch(deleteArticle(article._id))}><DeleteIcon fontSize="small" /> Delete</Button>
             </CardActions>
         </Card>
