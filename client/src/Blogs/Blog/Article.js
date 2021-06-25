@@ -5,11 +5,13 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
+import { useDispatch } from 'react-redux';
 
+import { deleteArticle } from '../../actions/articles';
 import useStyles from './styles';
 
 const Article = ({ article, setCurrentId }) => {
-
+    const dispatch = useDispatch();
     const history = useHistory();
 
     const truncate = (string, n) => {
@@ -46,7 +48,7 @@ const Article = ({ article, setCurrentId }) => {
             </CardContent>
             <CardActions className={classes.cardActions}>
                 <Button size="small" color="primary" onClick={() => { }}><ThumbUpAltIcon fontSize="small" /> Like {article.likeCount} </Button>
-                <Button size="small" color="primary" onClick={() => { }}><DeleteIcon fontSize="small" /> Delete</Button>
+                <Button size="small" color="primary" onClick={() => dispatch(deleteArticle(article._id))}><DeleteIcon fontSize="small" /> Delete</Button>
             </CardActions>
         </Card>
     )

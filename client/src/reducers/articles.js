@@ -6,6 +6,8 @@ const articleReducer = (articles = [], action) => {
             return [...articles, action.payload];
         case 'UPDATE':
             return articles.map((article) => article._id === action.payload ? action.payload : article);
+        case 'DELETE':
+            return articles.filter((article) => article._id !== action.payload);
         default:
             return articles;
     }
