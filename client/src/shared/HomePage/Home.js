@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <React.Fragment>
             <Banner />
-            <Articles />
+            {/* <Articles /> */}
             <PastEvents />
         </React.Fragment>
     )

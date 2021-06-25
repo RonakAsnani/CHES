@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Article from './Article';
 import './Articles.css';
 
 const Articles = () => {
@@ -20,13 +19,13 @@ const Articles = () => {
                 </div>
                 <div className="row">
                         <div className="col-lg-4 col-md-4 col-sm-6 single-article">
-                            <Article />
+                            {/* <Article /> */}
                         </div>
                     <div className="col-lg-4 col-md-4 col-sm-6 single-article">
-                        <Article />
+                        {/* <Article /> */}
                     </div>
                     <div className="col-lg-4 col-md-4 col-sm-6 single-article">
-                        <Article />
+                        {/* <Article /> */}
                     </div>
                 </div>
             </div>
