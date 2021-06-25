@@ -1,7 +1,6 @@
 import { AUTH, UPDATE } from "../constants/actionTypes";
 
 import * as api from "../api/index.js";
-import { useSelector } from "react-redux";
 
 export const signin = (formData, history) => async (dispatch) => {
   try {

@@ -30,6 +30,12 @@ const userSchema = mongoose.Schema(
     batchOf: {
       type: String,
     },
+    positionTwo: {
+      type: String,
+    },
+    batchOfTwo: {
+      type: String,
+    },
   },
   {
     timestamps: true,

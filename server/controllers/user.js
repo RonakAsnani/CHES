@@ -92,7 +92,16 @@ export const signup = async (req, res) => {
 
 export const update = async (req, res) => {
   try {
-    const { email, linkedIn, selectedFile, _id, position, batchOf } = req.body;
+    const {
+      email,
+      linkedIn,
+      selectedFile,
+      _id,
+      position,
+      batchOf,
+      positionTwo,
+      batchOfTwo,
+    } = req.body;
     //console.log(req.body);
 
     const user = await User.findOne({ email });
@@ -107,6 +116,8 @@ export const update = async (req, res) => {
           linkedIn: linkedIn,
           position: position,
           batchOf: batchOf,
+          positionTwo: positionTwo,
+          batchOfTwo: batchOfTwo,
         },
         {
           new: true,
@@ -121,6 +132,8 @@ export const update = async (req, res) => {
           selectedFile: selectedFile,
           position: position,
           batchOf: batchOf,
+          positionTwo: positionTwo,
+          batchOfTwo: batchOfTwo,
         },
         {
           new: true,

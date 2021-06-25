@@ -13,7 +13,7 @@ const authReducer = (state = { authData: null }, action) => {
       const user = JSON.parse(localStorage.getItem("profile"));
       user.result = { ...action?.data.data };
       localStorage.setItem("profile", JSON.stringify(user));
-      console.log(JSON.parse(localStorage.getItem("profile")));
+      // console.log(JSON.parse(localStorage.getItem("profile")));
       return { ...state, authData: action?.data };
     default:
       return state;
