@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 import MainNavigation from "./shared/Navigation/MainNavigation";
 import Footer from "./shared/Footer/Footer";
-
 import "./App.css";
 import Home from "./shared/HomePage/Home";
 import Auth from "./shared/Auth/Auth";
@@ -12,7 +12,11 @@ import UserProfile from "./shared/UserProfile/UserProfile";
 import Blogs from "../src/Blogs/Blogs";
 import CreateBlog from "./Blogs/CreateBlog";
 
+
 function App() {
+
+  const [currentId, setCurrentId] = useState(null);
+
   return (
     <Router>
       <MainNavigation />
@@ -26,11 +30,11 @@ function App() {
             eureka
           </Route> */}
           <Route path="/blogs" exact>
-            <Blogs />
+            <Blogs setCurrentId={setCurrentId} />
           </Route>
           <Route path="/about" component={About} exact></Route>
           <Route path="/blogs/create" exact>
-            <CreateBlog />
+            <CreateBlog  currentId={currentId} setCurrentId={setCurrentId} />
           </Route>
           <Route path="/auth" component={Auth} exact></Route>
           <Route path="/userProfile" component={UserProfile} exact></Route>

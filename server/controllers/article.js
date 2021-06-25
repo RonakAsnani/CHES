@@ -1,3 +1,5 @@
+import mongoose from 'mongoose';
+
 import ArticleMessage from '../models/articleMessage.js';
 
 export const getArticles = async (req, res) => {
@@ -23,4 +25,15 @@ export const createArticle = async (req, res) => {
     }
 
    
+}
+
+export const updateArticle = async (req, res) => {
+    const { id: _id } = req.params;
+    const article = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No article with that id');
+
+    const updatedArticle = await ArticleMessage.findByIdAndUpdate(_id, {...article, _id}, { new: true });
+    
+    res.json(updatedArticle);
 }

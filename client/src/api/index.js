@@ -14,6 +14,7 @@ API.interceptors.request.use((req) => {
 
 export const fetchArticles = () => API.get('/articles');
 export const createArticle = (newArticle) => API.post('/articles', newArticle);
+export const updateArticle = (id, updatedArticle) => API.patch(`/articles/${id}`, updatedArticle);
 
 export const signIn = (formData) => API.post("/user/signin", formData);
 export const signUp = (formData) => API.post("/user/signup", formData);

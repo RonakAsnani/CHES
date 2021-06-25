@@ -23,3 +23,14 @@ try {
 }
 
 }
+
+export const updateArticle = (id, article) => async (dispatch) => {
+    try {
+        const { data } = await api.updateArticle(id, article);
+
+        dispatch({ type: 'UPDATE', payload: data });
+
+    } catch (error) {
+        console.log(error);
+    }
+}
