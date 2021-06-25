@@ -75,7 +75,7 @@ export const signup = async (req, res) => {
         id: result._id,
       },
       "test",
-      { expiresIn: "2h" }
+      { expiresIn: "24h" }
     );
     console.log("control");
     return res.status(200).json({

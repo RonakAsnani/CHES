@@ -27,8 +27,13 @@ const useStyles = makeStyles({
     marginBottom: "10px",
   },
   media: {
-    height: "50%",
-    width: "60%",
+    height: "200px",
+    width: "200px",
+    margin: "auto",
+  },
+  media2: {
+    height: "200px",
+    width: "100%",
     margin: "auto",
   },
 });
@@ -38,34 +43,38 @@ export default function Siphon() {
   return (
     <div>
       <Card className={classes.root}>
+        <h2 style={{ textAlign: "center", marginTop: "10px" }}>About Siphon</h2>
         <CardActionArea style={{ textAlign: "center" }}>
-          <img
-            className={classes.media}
-            src={logo}
-            alt="Contemplative Reptile"
-          />
           <CardContent>
-            <Typography variant="body" color="textSecondary" component="h6">
-              Chemical Engineering Society (ChES) is a student chapter of the
-              chemical engineering department, SVNIT. The faction provides a
-              platform for the chemical engineering community of SVNIT where
-              they can discuss, plan, execute and debug their problems among
-              their peers. Events and seminars conducted by ChES focus on both
-              the building the public understanding of technical issues and the
-              individual curiosity of the enthusiasts.
-            </Typography>
-            <br />
-            <Typography variant="body" color="textSecondary" component="h6">
-              Dr. Meghal Desai is currently the faculty advisor of the student
-              chapter. Affiliated to the American Institute of Chemical
-              Engineering (AIChE), ChES aims of spreading knowledge and
-              experience to the future chemical engineers about chemical
-              engineering education and application.
-            </Typography>
+            <div className="row">
+              <div className="col-sm-12 col-md-6">
+                <img
+                  className={classes.media}
+                  src={logo}
+                  alt="Contemplative Reptile"
+                />
+              </div>
+              <div className="col-sm-12 col-md-6">
+                <p style={{ marginTop: "10px" }}>
+                  Siphon is the annual departmental fest of Chemical Engineering
+                  Deartment, SVNIT. It is a two day fest, organised in the first
+                  month of even semester. Events under Siphon are planned to
+                  improve the general chemical knowlege of the masses through
+                  games like Murder-Mystery, Bid-Wisely, The Lucky Element,
+                  Chemical Tambola. Other events like Starch Walk, Plasti-Psycho
+                  are pure fun games with a chemical twist. Many of the events
+                  have cash prizes up for grab.
+                </p>
+                <p>
+                  The Chem-E-Car, and other teams representing SVNIT in other
+                  institues conduct their workshops as well duing Siphon.
+                </p>
+              </div>
+            </div>
           </CardContent>
         </CardActionArea>
       </Card>
-
+      <h4 style={{ textAlign: "center" }}>Siphon Down the Lane</h4>
       <div
         className="card-slider"
         style={{ display: "flex", overflowX: "scroll" }}
@@ -74,21 +83,16 @@ export default function Siphon() {
           <Card>
             <CardActionArea style={{ textAlign: "center" }}>
               <img
-                className={classes.media}
+                className={classes.media2}
                 src={logo1}
                 alt="Contemplative Reptile"
               />
               <CardContent>
-                <Typography variant="body" color="textSecondary" component="h6">
-                  Chemical Engineering Society (ChES) is a student chapter of
-                  the chemical engineering department, SVNIT. The faction
-                  provides a platform for the chemical engineering community of
-                  SVNIT where they can discuss, plan, execute and debug their
-                  problems among their peers. Events and seminars conducted by
-                  ChES focus on both the building the public understanding of
-                  technical issues and the individual curiosity of the
-                  enthusiasts.
-                </Typography>
+                <h5>Siphon 6.0</h5>
+                <p>
+                  The Chem-E-Car, and other teams representing SVNIT in other
+                  institues conduct their workshops as well duing Siphon.
+                </p>
               </CardContent>
             </CardActionArea>
           </Card>
@@ -97,21 +101,16 @@ export default function Siphon() {
           <Card>
             <CardActionArea style={{ textAlign: "center" }}>
               <img
-                className={classes.media}
+                className={classes.media2}
                 src={logo1}
                 alt="Contemplative Reptile"
               />
               <CardContent>
-                <Typography variant="body" color="textSecondary" component="h6">
-                  Chemical Engineering Society (ChES) is a student chapter of
-                  the chemical engineering department, SVNIT. The faction
-                  provides a platform for the chemical engineering community of
-                  SVNIT where they can discuss, plan, execute and debug their
-                  problems among their peers. Events and seminars conducted by
-                  ChES focus on both the building the public understanding of
-                  technical issues and the individual curiosity of the
-                  enthusiasts.
-                </Typography>
+                <h5>Siphon 5.0</h5>
+                <p>
+                  The Chem-E-Car, and other teams representing SVNIT in other
+                  institues conduct their workshops as well duing Siphon.
+                </p>
               </CardContent>
             </CardActionArea>
           </Card>
@@ -120,21 +119,16 @@ export default function Siphon() {
           <Card>
             <CardActionArea style={{ textAlign: "center" }}>
               <img
-                className={classes.media}
+                className={classes.media2}
                 src={logo1}
                 alt="Contemplative Reptile"
               />
               <CardContent>
-                <Typography variant="body" color="textSecondary" component="h6">
-                  Chemical Engineering Society (ChES) is a student chapter of
-                  the chemical engineering department, SVNIT. The faction
-                  provides a platform for the chemical engineering community of
-                  SVNIT where they can discuss, plan, execute and debug their
-                  problems among their peers. Events and seminars conducted by
-                  ChES focus on both the building the public understanding of
-                  technical issues and the individual curiosity of the
-                  enthusiasts.
-                </Typography>
+                <h5>Siphon 4.0</h5>
+                <p>
+                  The Chem-E-Car, and other teams representing SVNIT in other
+                  institues conduct their workshops as well duing Siphon.
+                </p>
               </CardContent>
             </CardActionArea>
           </Card>
@@ -143,21 +137,16 @@ export default function Siphon() {
           <Card>
             <CardActionArea style={{ textAlign: "center" }}>
               <img
-                className={classes.media}
+                className={classes.media2}
                 src={logo1}
                 alt="Contemplative Reptile"
               />
               <CardContent>
-                <Typography variant="body" color="textSecondary" component="h6">
-                  Chemical Engineering Society (ChES) is a student chapter of
-                  the chemical engineering department, SVNIT. The faction
-                  provides a platform for the chemical engineering community of
-                  SVNIT where they can discuss, plan, execute and debug their
-                  problems among their peers. Events and seminars conducted by
-                  ChES focus on both the building the public understanding of
-                  technical issues and the individual curiosity of the
-                  enthusiasts.
-                </Typography>
+                <h5>Siphon 3.0</h5>
+                <p>
+                  The Chem-E-Car, and other teams representing SVNIT in other
+                  institues conduct their workshops as well duing Siphon.
+                </p>
               </CardContent>
             </CardActionArea>
           </Card>
@@ -166,21 +155,16 @@ export default function Siphon() {
           <Card>
             <CardActionArea style={{ textAlign: "center" }}>
               <img
-                className={classes.media}
+                className={classes.media2}
                 src={logo1}
                 alt="Contemplative Reptile"
               />
               <CardContent>
-                <Typography variant="body" color="textSecondary" component="h6">
-                  Chemical Engineering Society (ChES) is a student chapter of
-                  the chemical engineering department, SVNIT. The faction
-                  provides a platform for the chemical engineering community of
-                  SVNIT where they can discuss, plan, execute and debug their
-                  problems among their peers. Events and seminars conducted by
-                  ChES focus on both the building the public understanding of
-                  technical issues and the individual curiosity of the
-                  enthusiasts.
-                </Typography>
+                <h5>Siphon 2.0</h5>
+                <p>
+                  The Chem-E-Car, and other teams representing SVNIT in other
+                  institues conduct their workshops as well duing Siphon.
+                </p>
               </CardContent>
             </CardActionArea>
           </Card>
@@ -189,21 +173,16 @@ export default function Siphon() {
           <Card>
             <CardActionArea style={{ textAlign: "center" }}>
               <img
-                className={classes.media}
+                className={classes.media2}
                 src={logo1}
                 alt="Contemplative Reptile"
               />
               <CardContent>
-                <Typography variant="body" color="textSecondary" component="h6">
-                  Chemical Engineering Society (ChES) is a student chapter of
-                  the chemical engineering department, SVNIT. The faction
-                  provides a platform for the chemical engineering community of
-                  SVNIT where they can discuss, plan, execute and debug their
-                  problems among their peers. Events and seminars conducted by
-                  ChES focus on both the building the public understanding of
-                  technical issues and the individual curiosity of the
-                  enthusiasts.
-                </Typography>
+                <h5>Siphon 1.0</h5>
+                <p>
+                  The Chem-E-Car, and other teams representing SVNIT in other
+                  institues conduct their workshops as well duing Siphon.
+                </p>
               </CardContent>
             </CardActionArea>
           </Card>
