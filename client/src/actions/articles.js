@@ -1,4 +1,4 @@
-import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE, FETCH_ARTICLE } from '../constants/actionTypes';
 import * as api from '../api';
 
 //action creators
@@ -13,6 +13,17 @@ try {
     }
     
 }
+
+export const getArticle = (id) => async (dispatch) => {
+
+    try {
+        const { data } = await api.fetchArticle(id);
+        dispatch({ type: FETCH_ARTICLE, payload: data });
+    } catch (error) {
+        console.log(error.message);
+        }
+        
+    }
 
 export const createArticle = (article) => async (dispatch) => {
 

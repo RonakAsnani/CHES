@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import MainNavigation from "./shared/Navigation/MainNavigation";
@@ -11,6 +11,7 @@ import Siphon from "./shared/siphon/Siphon";
 import UserProfile from "./shared/UserProfile/UserProfile";
 import Blogs from "../src/Blogs/Blogs";
 import CreateBlog from "./Blogs/CreateBlog";
+import SingleBlog from "./Blogs/SingleBlog/SingleBlog";
 
 
 function App() {
@@ -32,10 +33,13 @@ function App() {
           <Route path="/blogs" exact>
             <Blogs setCurrentId={setCurrentId} />
           </Route>
-          <Route path="/about" component={About} exact></Route>
           <Route path="/blogs/create" exact>
-            <CreateBlog  currentId={currentId} setCurrentId={setCurrentId} />
+            <CreateBlog currentId={currentId} setCurrentId={setCurrentId} />
           </Route>
+          <Route path="/blogs/:id" exact>
+            <SingleBlog />
+          </Route>
+          <Route path="/about" component={About} exact></Route>
           <Route path="/auth" component={Auth} exact></Route>
           <Route path="/userProfile" component={UserProfile} exact></Route>
         </Switch>

@@ -12,6 +12,19 @@ export const getArticles = async (req, res) => {
     }
 }
 
+export const getArticle = async (req, res) => {
+
+    const { id } = req.params;
+
+    try {
+        const article = await ArticleMessage.findById(id);
+
+        res.status(200).json(article);
+    } catch (error) {
+        res.status(404).json({message: error.message})
+    }
+}
+
 export const createArticle = async (req, res) => {
     const article = req.body;
 

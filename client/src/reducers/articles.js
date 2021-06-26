@@ -1,8 +1,10 @@
-import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE, FETCH_ARTICLE } from '../constants/actionTypes';
 
 const articleReducer = (articles = [], action) => {
     switch (action.type) {
         case FETCH_ALL:
+            return action.payload;
+        case FETCH_ARTICLE:
             return action.payload;
         case CREATE:
             return [...articles, action.payload];
