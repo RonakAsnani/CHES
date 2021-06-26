@@ -21,7 +21,10 @@ import Select from "@material-ui/core/Select";
 import "./profile.css";
 
 export default function UserProfile() {
+  const auth = useSelector((state) => state.auth);
+
   const user = JSON.parse(localStorage.getItem("profile"));
+
   const classes = useStyles();
   const dispatch = useDispatch();
   const userss = useSelector((state) => state.auth);
@@ -31,6 +34,22 @@ export default function UserProfile() {
   const handleChange = (e) => {
     setUserData({ ...userData, batchOf: e.target.value });
   };
+  const handleChange2 = (e) => {
+    setUserData({ ...userData, batchOfTwo: e.target.value });
+  };
+  useEffect(() => {
+    setUserData({
+      id: user?.result._id,
+      email: user?.result.email,
+      position: user?.result.position,
+      batchOf: user?.result.batchOf,
+      name: "",
+      linkedIn: user?.result.linkedIn,
+      selectedFile: "",
+      positionTwo: user?.result.positionTwo,
+      batchOfTwo: user?.result.batchOfTwo,
+    });
+  }, [auth]);
 
   const [userData, setUserData] = useState({
     id: user?.result._id,
@@ -40,10 +59,10 @@ export default function UserProfile() {
     position: user?.result.position,
     batchOf: user?.result.batchOf,
     selectedFile: "",
+    positionTwo: user?.result.positionTwo,
+    batchOfTwo: user?.result.batchOfTwo,
   });
-  useEffect(() => {
-    console.log(user);
-  }, []);
+
   const clear = () => {
     setUserData({
       id: user?.result._id,
@@ -53,6 +72,8 @@ export default function UserProfile() {
       name: "",
       linkedIn: user?.result.linkedIn,
       selectedFile: "",
+      positionTwo: user?.result.positionTwo,
+      batchOfTwo: user?.result.batchOfTwo,
     });
   };
   const handleSubmit = (e) => {
@@ -122,19 +143,57 @@ export default function UserProfile() {
             <InputLabel
               style={{ width: "100%" }}
               className="batch-selector"
-              value={userData?.batchOf}
               id="demo-mutiple-name-label"
             ></InputLabel>
 
             <Select
               labelId="demo-mutiple-name-label"
               id="demo-mutiple-name"
+              value={userData?.batchOf}
               onChange={handleChange}
               input={<Input />}
             >
-              <MenuItem value="2024">2024 </MenuItem>
-              <MenuItem value="2023">2023 </MenuItem>
-              <MenuItem value="2022">2022 </MenuItem>
+              <MenuItem value="2021">2021 </MenuItem>
+              <MenuItem value="2020">2020 </MenuItem>
+              <MenuItem value="2019">2019 </MenuItem>
+              <MenuItem value="2018">2018 </MenuItem>
+            </Select>
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%",
+          }}
+          className="full-line"
+        >
+          <div className="position-selector">
+            <TextField
+              name="positionTwo"
+              variant="outlined"
+              label="2nd Position (if any)"
+              fullWidth
+              value={userData?.positionTwo}
+              onChange={(e) =>
+                setUserData({ ...userData, positionTwo: e.target.value })
+              }
+            />
+          </div>
+          <div className="batch-selector">
+            <InputLabel
+              style={{ width: "100%" }}
+              className="batch-selector"
+              id="demo-mutiple-name-label"
+            ></InputLabel>
+
+            <Select
+              labelId="demo-mutiple-name-label"
+              id="demo-mutiple-name"
+              value={userData?.batchOfTwo}
+              onChange={handleChange2}
+              input={<Input />}
+            >
               <MenuItem value="2021">2021 </MenuItem>
               <MenuItem value="2020">2020 </MenuItem>
               <MenuItem value="2019">2019 </MenuItem>

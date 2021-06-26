@@ -9401,6 +9401,15 @@
     "object-assign" "^4.1.0"
     "strict-uri-encode" "^1.0.0"
 
+"query-string@^5.1.1":
+  "integrity" "sha512-gjWOsm2SoGlgLEdAGt7a6slVOk9mGiXmPFMqrEhLQ68rhQuBnpfs3+EmlvqKyxnCo9/PPlF+9MtY02S1aFg+Jw=="
+  "resolved" "https://registry.npmjs.org/query-string/-/query-string-5.1.1.tgz"
+  "version" "5.1.1"
+  dependencies:
+    "decode-uri-component" "^0.2.0"
+    "object-assign" "^4.1.0"
+    "strict-uri-encode" "^1.0.0"
+
 "querystring-es3@^0.2.0":
   "integrity" "sha1-nsYfeQSYdXB9aUFFlv2Qek1xHnM="
   "resolved" "https://registry.npmjs.org/querystring-es3/-/querystring-es3-0.2.1.tgz"
@@ -9531,7 +9540,7 @@
   "resolved" "https://registry.npmjs.org/react-dom-factories/-/react-dom-factories-1.0.2.tgz"
   "version" "1.0.2"
 
-"react-dom@^17.0.2":
+"react-dom@^16.0.0 || ^15.0.0 || ~0.14.0", "react-dom@^17.0.2":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -9551,6 +9560,13 @@
   "version" "1.0.3"
   dependencies:
     "react" "^15.6.1"
+
+"react-instagram-embed@^2.0.0":
+  "integrity" "sha512-6S+ZLJvB8vn2zz5W5ZWs6bsUd8wxsAZtB0zk/5Y29PkneKHXRPWWSre6GYA3DMPrsLs71FByd8I4kl4UHoHcRw=="
+  "resolved" "https://registry.npmjs.org/react-instagram-embed/-/react-instagram-embed-2.0.0.tgz"
+  "version" "2.0.0"
+  dependencies:
+    "query-string" "^5.1.1"
 
 "react-is@^16.13.1", "react-is@^16.6.0", "react-is@^16.7.0", "react-is@^16.8.0 || ^17.0.0", "react-is@^16.8.1":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
@@ -9707,7 +9723,7 @@
     "object-assign" "^4.1.0"
     "prop-types" "^15.5.10"
 
-"react@^17.0.2":
+"react@^16.0.0 || ^15.0.0 || ~0.14.0", "react@^17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
