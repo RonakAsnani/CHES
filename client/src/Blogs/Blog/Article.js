@@ -11,6 +11,7 @@ import { deleteArticle, likeArticle } from '../../actions/articles';
 import useStyles from './styles';
 
 const Article = ({ article, setCurrentId }) => {
+    const user = JSON.parse(localStorage.getItem('profile'));
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -30,11 +31,15 @@ const Article = ({ article, setCurrentId }) => {
         <Card className={classes.card}>
             <CardMedia className={classes.media} image={article.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={article.title} />
             <div className={classes.overlay}>
-                <Typography variant="h6">By:- {article.creator}</Typography>
+                <Typography variant="h6">By:- {article.name}</Typography>
                 <Typography variant="body2">{moment(article.createdAt).fromNow()}</Typography>
             </div>
             <div className={classes.overlay2}>
-                <Button style={{ color: 'white' }} size="small" onClick={updateData}><MoreHorizIcon fontSize="default" /><Link to="/create"></Link></Button>
+            {
+                    (user?.result?._id === article?.creator) && (
+                        <Button style={{ color: 'white' }} size="small" onClick={updateData}><MoreHorizIcon fontSize="default" /><Link to="/create"></Link></Button>
+                    )
+                }
             </div>
             <div className={classes.details}>
                 <Typography variant="body2" color="textSecondary" component="h2">{article.tags.map((tag) => `#${tag} `)}</Typography>
@@ -48,7 +53,11 @@ const Article = ({ article, setCurrentId }) => {
             </CardContent>
             <CardActions className={classes.cardActions}>
                 <Button size="small" color="primary" onClick={() => dispatch(likeArticle(article._id))}><ThumbUpAltIcon fontSize="small" /> Like {article.likeCount} </Button>
-                <Button size="small" color="primary" onClick={() => dispatch(deleteArticle(article._id))}><DeleteIcon fontSize="small" /> Delete</Button>
+                {
+                    (user?.result?._id === article?.creator) && (
+                        <Button size="small" color="primary" onClick={() => dispatch(deleteArticle(article._id))}><DeleteIcon fontSize="small" /> Delete</Button>
+                    )
+                }
             </CardActions>
         </Card>
     )

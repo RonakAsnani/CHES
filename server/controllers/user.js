@@ -4,7 +4,6 @@ import User from "../models/users.js";
 import mongoose from "mongoose";
 
 export const signin = async (req, res) => {
-  console.log("wchj");
   const { email, password } = req.body;
 
   try {
@@ -20,7 +19,7 @@ export const signin = async (req, res) => {
     );
     if (!isPasswordCorrrect) {
       return res.status(400).json({
-        message: "Incorrect credentials",
+        message: "Invalid Credentials",
       });
     }
     const token = jwt.sign(

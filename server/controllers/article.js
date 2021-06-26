@@ -15,7 +15,7 @@ export const getArticles = async (req, res) => {
 export const createArticle = async (req, res) => {
     const article = req.body;
 
-    const newArticle = new ArticleMessage(article);
+    const newArticle = new ArticleMessage({ ...article, creator: req.userId, createdAt: new Date().toISOString()});
 
     res.status(201).json({ newArticle });
     try {

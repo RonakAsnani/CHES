@@ -1,15 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { CircularProgress } from "@material-ui/core";
 
+import { getArticles } from '../actions/articles';
 import Article from "./Blog/Article";
 
 function Blogs({ setCurrentId }) {
-  const articles = useSelector((state) => state.articles);
-  console.log(articles);
 
-  useEffect(() => {}, [articles]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getArticles());
+  }, [dispatch])
+
+  const articles = useSelector((state) => state.articles);
 
   return (
     <div style={{ marginTop: "100px" }}>
@@ -26,19 +31,24 @@ function Blogs({ setCurrentId }) {
             />
           </div>
         </div>
-        <div className="row">
-          {articles.map((post) => {
-            console.log(post);
-            return (
-              <div
-                key={post._id}
-                className="col-lg-4 col-md-4 col-sm-6 single-article"
-              >
-                <Article article={post} setCurrentId={setCurrentId} />
-              </div>
-            );
-          })}
-        </div>
+        {
+          !articles.length ? <CircularProgress /> : (
+            <div className="row">
+              {articles.map((post) => {
+                console.log(post);
+                return (
+                  <div
+                    key={post._id}
+                    className="col-lg-4 col-md-4 col-sm-6 single-article"
+                  >
+                    <Article article={post} setCurrentId={setCurrentId} />
+                  </div>
+                );
+              })}
+            </div>
+          )
+        }
+
       </div>
       <button>
         <Link to="/blogs/create">CREATE A BLOG</Link>

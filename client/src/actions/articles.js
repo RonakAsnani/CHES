@@ -39,7 +39,7 @@ export const updateArticle = (id, article) => async (dispatch) => {
 export const deleteArticle = (id) => async (dispatch) => {
     try {
         await api.deleteArticle(id);
-
+        
         dispatch({ type: DELETE, payload: id });
     } catch (error) {
         console.log(error);

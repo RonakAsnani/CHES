@@ -1,6 +1,7 @@
 import express from 'express';
 import { getArticles, createArticle, updateArticle, deleteArticle, likeArticle } from '../controllers/article.js';
 import multer from "multer";
+import auth from '../middleware/auth.js';
 
 const router = express.Router();
 
@@ -34,9 +35,9 @@ router.post("/uploadfiles", (req, res) => {
 });
 
 router.get('/', getArticles);
-router.post('/', createArticle);
-router.patch('/:id', updateArticle);
-router.delete('/:id', deleteArticle);
-router.patch('/:id/likeArticle', likeArticle)
+router.post('/', auth, createArticle);
+router.patch('/:id', auth, updateArticle);
+router.delete('/:id', auth, deleteArticle);
+router.patch('/:id/likeArticle', likeArticle);
 
 export default router;
