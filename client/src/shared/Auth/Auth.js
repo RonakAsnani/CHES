@@ -43,8 +43,6 @@ const Auth = (props) => {
       history.push("/");
     } else {
       dispatch(signin(formData, history));
-      console.log(props);
-      history.push("/userProfile");
     }
   };
   const handleChange = (e) => {
