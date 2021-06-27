@@ -19,6 +19,7 @@ import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import "./profile.css";
+import { Link } from "react-router-dom";
 
 export default function UserProfile() {
   const auth = useSelector((state) => state.auth);
@@ -222,6 +223,21 @@ export default function UserProfile() {
         >
           Update
         </Button>
+
+        <Link style={{ width: "100%" }} to="/blogs/create">
+          <Button
+            variant="contained"
+            style={{
+              backgroundColor: "#E9C46A",
+              color: "white",
+              width: "100%",
+            }}
+            size="large"
+            fullWidth
+          >
+            Create a Blog
+          </Button>
+        </Link>
       </form>
     </Paper>
   );
