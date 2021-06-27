@@ -13,10 +13,15 @@ import Blogs from "../src/Blogs/Blogs";
 import CreateBlog from "./Blogs/CreateBlog";
 import SingleBlog from "./Blogs/SingleBlog/SingleBlog";
 import NotFound from "./NotFound";
+import { useSelector } from "react-redux";
 
 function App() {
   const [currentId, setCurrentId] = useState(null);
-  const user = JSON.parse(localStorage.getItem("profile"));
+  let user = JSON.parse(localStorage.getItem("profile"));
+  const auth = useSelector((state) => state.auth);
+  React.useEffect(() => {
+    user = JSON.parse(localStorage.getItem("profile"));
+  }, [auth]);
 
   return (
     <Router>
