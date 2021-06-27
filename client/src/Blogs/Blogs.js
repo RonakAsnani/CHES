@@ -31,7 +31,15 @@ function Blogs({ setCurrentId }) {
           </div>
         </div>
         {!articles.length ? (
-          <CircularProgress />
+          <div
+            style={{
+              padding: "5px",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <CircularProgress />
+          </div>
         ) : (
           <div className="row">
             {articles.map((post) => {

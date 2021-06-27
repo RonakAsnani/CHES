@@ -12,11 +12,16 @@ import UserProfile from "./shared/UserProfile/UserProfile";
 import Blogs from "../src/Blogs/Blogs";
 import CreateBlog from "./Blogs/CreateBlog";
 import SingleBlog from "./Blogs/SingleBlog/SingleBlog";
-
+import NotFound from "./NotFound";
+import { useSelector } from "react-redux";
 
 function App() {
-
   const [currentId, setCurrentId] = useState(null);
+  let user = JSON.parse(localStorage.getItem("profile"));
+  const auth = useSelector((state) => state.auth);
+  React.useEffect(() => {
+    user = JSON.parse(localStorage.getItem("profile"));
+  }, [auth]);
 
   return (
     <Router>
@@ -33,15 +38,21 @@ function App() {
           <Route path="/blogs" exact>
             <Blogs setCurrentId={setCurrentId} />
           </Route>
-          <Route path="/blogs/create" exact>
-            <CreateBlog currentId={currentId} setCurrentId={setCurrentId} />
-          </Route>
-          <Route path="/blogs/:id" exact>
+          {user && (
+            <Route path="/blogs/create" exact>
+              <CreateBlog currentId={currentId} setCurrentId={setCurrentId} />
+            </Route>
+          )}
+
+          <Route path="/blogs/:id">
             <SingleBlog />
           </Route>
           <Route path="/about" component={About} exact></Route>
           <Route path="/auth" component={Auth} exact></Route>
-          <Route path="/userProfile" component={UserProfile} exact></Route>
+          {user && (
+            <Route path="/userProfile" component={UserProfile} exact></Route>
+          )}
+          <Route component={NotFound} />
         </Switch>
       </main>
       <Footer />

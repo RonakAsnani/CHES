@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import {
   Card,
   CardActions,
@@ -34,7 +34,7 @@ const Article = ({ likes, article, setCurrentId }) => {
   };
 
   const classes = useStyles();
-  const content = truncate(`${article.message}`, 250);
+  const content = truncate(`${article.message}`, 100);
 
   const openArticle = () => {
     history.push(`/blogs/${article._id}`);
