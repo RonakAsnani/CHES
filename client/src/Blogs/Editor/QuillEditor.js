@@ -200,150 +200,131 @@ class QuillEditor extends React.Component {
       files: [],
     };
 
-    this.reactQuillRef = null;
+    // I V F P들을  눌렀을떄 insertImage: this.imageHandler로 가서  거기서 inputOpenImageRef를 클릭 시킨다.
+    imageHandler = () => {
+      this.inputOpenImageRef.current.click();
+    };
 
-    this.inputOpenImageRef = React.createRef();
-    this.inputOpenVideoRef = React.createRef();
-    this.inputOpenFileRef = React.createRef();
-  }
+    videoHandler = () => {
+      this.inputOpenVideoRef.current.click();
+    };
 
-  componentDidMount() {
-    this._isMounted = true;
-  }
+    fileHandler = () => {
+      this.inputOpenFileRef.current.click();
+    };
 
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
+    insertImage = (e) => {
+      e.stopPropagation();
+      e.preventDefault();
 
-  handleChange = (html) => {
-    console.log("html", html);
-    // https://youtu.be/BbR-QCoKngE
-    // https://www.youtube.com/embed/ZwKhufmMxko
-    // https://tv.naver.com/v/9176888
-    // renderToStaticMarkup(ReactHtmlParser(html, options));
+      if (
+        e.currentTarget &&
+        e.currentTarget.files &&
+        e.currentTarget.files.length > 0
+      ) {
+        const file = e.currentTarget.files[0];
+        console.log(file);
 
-    this.setState(
-      {
-        editorHtml: html,
-      },
-      () => {
-        this.props.onEditorChange(this.state.editorHtml);
+        let formData = new FormData();
+        const config = {
+          header: { "content-type": "multipart/form-data" },
+        };
+        formData.append("file", file);
+
+        axios
+          .post(
+            "https://ches-svnit.herokuapp.com/articles/uploadfiles",
+            formData,
+            config
+          )
+          .then((response) => {
+            if (response.data.success) {
+              console.log(response.data);
+
+              const quill = this.reactQuillRef.getEditor();
+              quill.focus();
+
+              let range = quill.getSelection();
+              let position = range ? range.index : 0;
+
+              //먼저 노드 서버에다가 이미지를 넣은 다음에   여기 아래에 src에다가 그걸 넣으면 그게
+              //이미지 블롯으로 가서  크리에이트가 이미지를 형성 하며 그걸 발류에서     src 랑 alt 를 가져간후에  editorHTML에 다가 넣는다.
+              quill.insertEmbed(position, "image", {
+                src: "https://ches-svnit.herokuapp.com/" + response.data.url,
+                alt: response.data.fileName,
+              });
+              quill.setSelection(position + 1);
+
+              if (this._isMounted) {
+                this.setState(
+                  {
+                    files: [...this.state.files, file],
+                  },
+                  () => {
+                    this.props.onFilesChange(this.state.files);
+                  }
+                );
+              }
+            } else {
+              return alert("failed to upload file");
+            }
+          });
       }
-    );
-  };
+    };
 
-  // I V F P들을  눌렀을떄 insertImage: this.imageHandler로 가서  거기서 inputOpenImageRef를 클릭 시킨다.
-  imageHandler = () => {
-    this.inputOpenImageRef.current.click();
-  };
+    insertVideo = (e) => {
+      e.stopPropagation();
+      e.preventDefault();
 
-  videoHandler = () => {
-    this.inputOpenVideoRef.current.click();
-  };
+      if (
+        e.currentTarget &&
+        e.currentTarget.files &&
+        e.currentTarget.files.length > 0
+      ) {
+        const file = e.currentTarget.files[0];
 
-  fileHandler = () => {
-    this.inputOpenFileRef.current.click();
-  };
+        let formData = new FormData();
+        const config = {
+          header: { "content-type": "multipart/form-data" },
+        };
+        formData.append("file", file);
 
-  insertImage = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
+        axios
+          .post(
+            "https://ches-svnit.herokuapp.com/articles/uploadfiles",
+            formData,
+            config
+          )
+          .then((response) => {
+            if (response.data.success) {
+              const quill = this.reactQuillRef.getEditor();
+              quill.focus();
 
-    if (
-      e.currentTarget &&
-      e.currentTarget.files &&
-      e.currentTarget.files.length > 0
-    ) {
-      const file = e.currentTarget.files[0];
-      console.log(file);
+              let range = quill.getSelection();
+              let position = range ? range.index : 0;
+              quill.insertEmbed(position, "video", {
+                src: "https://ches-svnit.herokuapp.com/" + response.data.url,
+                title: response.data.fileName,
+              });
+              quill.setSelection(position + 1);
 
-      let formData = new FormData();
-      const config = {
-        header: { "content-type": "multipart/form-data" },
-      };
-      formData.append("file", file);
-
-      axios.post("/articles/uploadfiles", formData, config).then((response) => {
-        if (response.data.success) {
-          console.log(response.data);
-
-          const quill = this.reactQuillRef.getEditor();
-          quill.focus();
-
-          let range = quill.getSelection();
-          let position = range ? range.index : 0;
-
-          //먼저 노드 서버에다가 이미지를 넣은 다음에   여기 아래에 src에다가 그걸 넣으면 그게
-          //이미지 블롯으로 가서  크리에이트가 이미지를 형성 하며 그걸 발류에서     src 랑 alt 를 가져간후에  editorHTML에 다가 넣는다.
-          quill.insertEmbed(position, "image", {
-            src: "http://localhost:5000/" + response.data.url,
-            alt: response.data.fileName,
-          });
-          quill.setSelection(position + 1);
-
-          if (this._isMounted) {
-            this.setState(
-              {
-                files: [...this.state.files, file],
-              },
-              () => {
-                this.props.onFilesChange(this.state.files);
+              if (this._isMounted) {
+                this.setState(
+                  {
+                    files: [...this.state.files, file],
+                  },
+                  () => {
+                    this.props.onFilesChange(this.state.files);
+                  }
+                );
               }
-            );
-          }
-        } else {
-          return alert("failed to upload file");
-        }
-      });
-    }
-  };
-
-  insertVideo = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-
-    if (
-      e.currentTarget &&
-      e.currentTarget.files &&
-      e.currentTarget.files.length > 0
-    ) {
-      const file = e.currentTarget.files[0];
-
-      let formData = new FormData();
-      const config = {
-        header: { "content-type": "multipart/form-data" },
-      };
-      formData.append("file", file);
-
-      axios.post("/articles/uploadfiles", formData, config).then((response) => {
-        if (response.data.success) {
-          const quill = this.reactQuillRef.getEditor();
-          quill.focus();
-
-          let range = quill.getSelection();
-          let position = range ? range.index : 0;
-          quill.insertEmbed(position, "video", {
-            src: "http://localhost:5000/" + response.data.url,
-            title: response.data.fileName,
+            } else {
+              return alert("failed to upload file");
+            }
           });
-          quill.setSelection(position + 1);
-
-          if (this._isMounted) {
-            this.setState(
-              {
-                files: [...this.state.files, file],
-              },
-              () => {
-                this.props.onFilesChange(this.state.files);
-              }
-            );
-          }
-        } else {
-          return alert("failed to upload file");
-        }
-      });
-    }
-  };
+      }
+    };
+  }
 
   insertFile = (e) => {
     e.stopPropagation();
@@ -363,28 +344,34 @@ class QuillEditor extends React.Component {
       };
       formData.append("file", file);
 
-      axios.post("/articles/uploadfiles", formData, config).then((response) => {
-        if (response.data.success) {
-          const quill = this.reactQuillRef.getEditor();
-          quill.focus();
+      axios
+        .post(
+          "https://ches-svnit.herokuapp.com/articles/uploadfiles",
+          formData,
+          config
+        )
+        .then((response) => {
+          if (response.data.success) {
+            const quill = this.reactQuillRef.getEditor();
+            quill.focus();
 
-          let range = quill.getSelection();
-          let position = range ? range.index : 0;
-          quill.insertEmbed(position, "file", response.data.fileName);
-          quill.setSelection(position + 1);
+            let range = quill.getSelection();
+            let position = range ? range.index : 0;
+            quill.insertEmbed(position, "file", response.data.fileName);
+            quill.setSelection(position + 1);
 
-          if (this._isMounted) {
-            this.setState(
-              {
-                files: [...this.state.files, file],
-              },
-              () => {
-                this.props.onFilesChange(this.state.files);
-              }
-            );
+            if (this._isMounted) {
+              this.setState(
+                {
+                  files: [...this.state.files, file],
+                },
+                () => {
+                  this.props.onFilesChange(this.state.files);
+                }
+              );
+            }
           }
-        }
-      });
+        });
     }
   };
 
