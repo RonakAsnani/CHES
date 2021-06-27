@@ -72,7 +72,12 @@ const NavLinks = () => {
         )}
         {user?.result && (
           <li>
-            <Button onClick={logout}>LOGOUT</Button>
+            <Button
+              style={{ fontWeight: "bold", font: "inherit" }}
+              onClick={logout}
+            >
+              LOGOUT
+            </Button>
           </li>
         )}
       </ul>

@@ -74,7 +74,7 @@ export default function Siphon() {
           </CardContent>
         </CardActionArea>
       </Card>
-      <h4 style={{ textAlign: "center" }}>Siphon Down the Lane</h4>
+      {/* <h4 style={{ textAlign: "center" }}>Siphon Down the Lane</h4>
       <div
         className="card-slider"
         style={{ display: "flex", overflowX: "scroll" }}
@@ -187,7 +187,7 @@ export default function Siphon() {
             </CardActionArea>
           </Card>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
