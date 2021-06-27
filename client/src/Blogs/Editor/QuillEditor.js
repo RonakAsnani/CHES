@@ -72,7 +72,9 @@ class ImageBlot extends BlockEmbed {
         const imgTag = super.create();
         imgTag.setAttribute('src', value.src);
         imgTag.setAttribute('alt', value.alt);
-        imgTag.setAttribute('width', '80%');
+        imgTag.setAttribute('width', '30%');
+        imgTag.setAttribute('height', '20%');
+        imgTag.setAttribute('display', 'flex');
         return imgTag;
     }
 
@@ -93,8 +95,10 @@ class VideoBlot extends BlockEmbed {
             const videoTag = super.create();
             videoTag.setAttribute('src', value.src);
             videoTag.setAttribute('title', value.title);
-            videoTag.setAttribute('width', '80%');
+            videoTag.setAttribute('width', '50%');
+            videoTag.setAttribute('width', '40%');
             videoTag.setAttribute('controls', '');
+            videoTag.setAttribute('display', 'flex');
 
             return videoTag;
         } else {
@@ -102,7 +106,9 @@ class VideoBlot extends BlockEmbed {
             iframeTag.setAttribute('src', value);
             iframeTag.setAttribute('frameborder', '0');
             iframeTag.setAttribute('allowfullscreen', true);
-            iframeTag.setAttribute('width', '60%');
+            iframeTag.setAttribute('width', '50%');
+            iframeTag.setAttribute('height', '40%');
+            iframeTag.setAttribute('display', 'flex');
             return iframeTag;
         }
     }

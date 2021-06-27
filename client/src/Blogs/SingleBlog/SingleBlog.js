@@ -26,14 +26,16 @@ const SingleBlog = () => {
         <div style={{ marginTop: "90px" }}>
             <div className="container p-5">
                 <div className="row">
-                    <div style={{ textAlign: "center" }} className="col-lg-12 col-md-12">
+                    <div className="col-lg-12 col-md-12">
                         {
                             article.length > 1 ? <CircularProgress /> :
                                 (
                                     <div>
-                                        <h4>Published By {article.name} {article.contributors}</h4>
-                                        <h1>{article.title}</h1>
-                                        <img className="article-img" src={article.selectedFile} />
+                                        <h4 style={{ textAlign: "center" }}>Published By {article.name}, {article.contributors}</h4>
+                                        <h1 style={{ textAlign: "center" }}>{article.title}</h1>
+                                        <hr />
+                                        <img style={{ display: "flex", margin: "auto" }} className="article-img" src={article.selectedFile} />
+                                        <hr />
                                         <div dangerouslySetInnerHTML={{ __html: content }}></div>
                                     </div>
                                 )
