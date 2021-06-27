@@ -54,7 +54,7 @@ const Home = () => {
       />
       <h3 style={{ textAlign: "center" }}>Our Instagram Feed</h3>
       <br />
-      <Carousel slides={slides} autoplay={true} interval={3000} arrow={false} />
+      <Carousel slides={slides} autoplay={true} interval={2000} arrow={false} />
       <br />
       <br />
     </React.Fragment>

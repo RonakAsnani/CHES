@@ -98,12 +98,12 @@ const Article = ({ likes, article, setCurrentId }) => {
             <DeleteIcon fontSize="small" /> Delete
           </Button>
         )}
-        {user && (
+        {/* {user && (
           <Button style={{ color: "black" }} size="small" onClick={updateData}>
             <MoreHorizIcon fontSize="default" />
             <Link to="/create"></Link>
           </Button>
-        )}
+        )} */}
       </CardActions>
     </Card>
   );

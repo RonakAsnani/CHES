@@ -17,7 +17,7 @@ app.use(cors());
 app.use("/user", userRoutes);
 app.use("/articles", articleRoutes);
 
-app.use('/uploads', express.static('../uploads'));
+app.use('/uploads', express.static('./uploads'));
 
 const PORT = process.env.PORT || 5000;
 mongoose

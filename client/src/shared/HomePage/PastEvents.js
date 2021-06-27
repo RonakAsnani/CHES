@@ -37,22 +37,19 @@ const Pastevents = (props) => {
                 <div className="row align-items-center justify-content-between">
                     <div className="col-md-6">
                         <h2 style={{ fontSize: "42px" }}>Eureka</h2>
-                        <p>Déjà vu.
-                            They say it’s when
-                            You see the already seen.
-                            It’s like the coming back of foreshadows
-                            That you left behind,
-                            Quite a while ago.
-                            And in a way that you
-                            Least expected it.
-                            But what I say is,
-                            Let’s not believe in
-                            Déjà vu.
-                            Instead,
-                            I would like
-                            Rather love to
-                            Be your
-                            'Deja Brew'.</p>
+                        <p>This initiative was started in October 2019 to help students develop a
+                            research-orientated mind. Participating students were assigned problem
+                            statements like Self-healing Corrosion-resistant coatings, Innovation in electric
+                            batteries, Plastic to Fuel, Nanomaterials, Vector Entrapment, Electrostatic
+                            precipitators etc. which needed to be optimised. The program lasted for a month
+                            and was successful up to a great extent as students learnt to access, read and
+                            analyse the research papers that helped them get an idea of the research field.
+                            Groups of 2​nd and 3​rd year students were made to organise the program. Weekly
+                            meetings were conducted to discuss the problem statements. There was an online
+                            portal assessment to evaluate the progress of each team. Teams presented their
+                            research abstracts to the audience in the Blackboard Sessions conducted. Finally,
+                            the teams compiled and concluded their optimal solution to the respective problem
+                            statement selected by them in the Poster Presentation.</p>
                     </div>
                     <div className="col-md-6 col-lg-5">
                         <img src={PEureka} className="img-fluid" />
@@ -67,8 +64,13 @@ const Pastevents = (props) => {
                     </div>
                     <div className="col-md-6">
                         <h2 style={{ fontSize: "42px" }}>Stock Mania</h2>
-                        <p>We are focussed on giving a satisfactory user experience and creating spaces which connect with the local culture of any location we establish at.
-                            Fresh & superior quality ingredients are used to create innovative dishes and beverages that taste & look distinctive and incite fascination. From the lighting to the curated music, from free-walk spaces to the seating, we formulate an aesthetic as a whole so the final picture at the end is nothing short of marvelous!</p>
+                        <p>Rags or Riches?
+                            In investing, what is comfortable is rarely profitable. It is about being smarter and more disciplined than the rest.
+
+                            ChES brings a Pre-Event, for our much awaited annual fest, Siphon 6.0, for you get a better understanding of trading strategies and portfolio management through Stock Mania!
+                            For more information and rules about the competition, attend the orientation on 21st March 2021, 5.30 pm onward.
+
+                            Also, you can perform a post-event analysis of your stock market trades and learn from your positives and negatives and apply them into real-time trading!</p>
                     </div>
                 </div>
             </div>

@@ -102,7 +102,7 @@ class VideoBlot extends BlockEmbed {
             iframeTag.setAttribute('src', value);
             iframeTag.setAttribute('frameborder', '0');
             iframeTag.setAttribute('allowfullscreen', true);
-            iframeTag.setAttribute('width', '80%');
+            iframeTag.setAttribute('width', '60%');
             return iframeTag;
         }
     }
