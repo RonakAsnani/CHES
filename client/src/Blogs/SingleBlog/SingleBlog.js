@@ -31,9 +31,9 @@ const SingleBlog = () => {
                             article.length > 1 ? <CircularProgress /> :
                                 (
                                     <div>
-                                        <h4>Published By {article.name}</h4>
+                                        <h4>Published By {article.name} {article.contributors}</h4>
                                         <h1>{article.title}</h1>
-                                        <img src={article.selectedFile} />
+                                        <img className="article-img" src={article.selectedFile} />
                                         <div dangerouslySetInnerHTML={{ __html: content }}></div>
                                     </div>
                                 )

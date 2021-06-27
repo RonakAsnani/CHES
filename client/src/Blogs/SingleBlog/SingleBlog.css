@@ -1,0 +1,9 @@
+.article-img{
+    width: 450px;
+}
+
+@media only screen and (max-width: 400px) {
+    .article-img{
+        width: 250px;
+    }
+  }

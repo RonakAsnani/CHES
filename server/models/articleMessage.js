@@ -5,6 +5,7 @@ const articleSchema = mongoose.Schema({
     message: String,
     name: String,
     creator: String,
+    contributors: String,
     tags: [String],
     selectedFile: String,
     likeCount: {

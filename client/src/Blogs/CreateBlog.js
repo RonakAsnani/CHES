@@ -17,6 +17,7 @@ function CreateBlog({ currentId, setCurrentId }) {
     const [postData, setPostData] = useState({
         title: '',
         message: '',
+        contributors: '',
         tags: '',
         selectedFile: ''
     })
@@ -41,6 +42,7 @@ function CreateBlog({ currentId, setCurrentId }) {
         } else {
             dispatch(createArticle({ ...postData, name: user?.result?.name }));
         }
+        clear();
         alert("Article Submitted");
         history.push("/");
     }
@@ -87,6 +89,14 @@ function CreateBlog({ currentId, setCurrentId }) {
                         placeholder={"Start Posting Something!"}
                         onEditorChange={onEditorChange}
                         onFilesChange={onFilesChange}
+                    />
+                    <TextField
+                        name="contributors"
+                        variant="outlined"
+                        label="Contributors"
+                        fullWidth
+                        value={postData.contributors}
+                        onChange={(e) => setPostData({ ...postData, contributors: e.target.value })}
                     />
                     <TextField
                         name="tags"
