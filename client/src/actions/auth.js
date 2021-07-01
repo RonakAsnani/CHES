@@ -1,8 +1,11 @@
 import { AUTH, UPDATE } from "../constants/actionTypes";
 
 import * as api from "../api/index.js";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const signin = (formData, history) => async (dispatch) => {
+  const notify = () => toast("Wow so easy!");
   try {
     const { data } = await api.signIn(formData);
 

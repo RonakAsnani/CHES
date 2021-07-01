@@ -20,6 +20,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import "./profile.css";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function UserProfile() {
   const auth = useSelector((state) => state.auth);
@@ -49,6 +51,15 @@ export default function UserProfile() {
       selectedFile: "",
       positionTwo: user?.result.positionTwo,
       batchOfTwo: user?.result.batchOfTwo,
+    });
+    toast.success("Profile Updated", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
     });
   }, [auth]);
 
@@ -96,6 +107,7 @@ export default function UserProfile() {
         src={user?.result.selectedFile}
         alt=""
       />
+      <ToastContainer />
       <form
         autoComplete="off"
         noValidate

@@ -16,6 +16,8 @@ import Icon from "./icon";
 import { AUTH } from "../../constants/actionTypes";
 import { useHistory } from "react-router-dom";
 import { signin, signup } from "../../actions/auth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const initialState = {
   firstName: "",
