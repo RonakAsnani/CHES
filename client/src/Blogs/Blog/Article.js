@@ -52,6 +52,8 @@ const Article = ({ likes, article, setCurrentId }) => {
           title={article.title}
         />
         <div className={classes.overlay}>
+
+//           <Typography variant="h6">By:- {article.contributors}</Typography>
           {/* <Typography variant="h6">By:- {article.name}</Typography> */}
           <Typography variant="body2">
             {moment(article.createdAt).fromNow()}
@@ -60,7 +62,7 @@ const Article = ({ likes, article, setCurrentId }) => {
         <div className={classes.overlay2}></div>
         <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">
-            {article.tags.map((tag) => `#${tag} `)}
+            {article.tag && article.tags.map((tag) => `#${tag} `)}
           </Typography>
         </div>
         <Typography
