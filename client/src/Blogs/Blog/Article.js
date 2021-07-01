@@ -52,7 +52,9 @@ const Article = ({ likes, article, setCurrentId }) => {
           title={article.title}
         />
         <div className={classes.overlay}>
-          <Typography variant="h6">By:- {article.contributors}</Typography>
+
+//           <Typography variant="h6">By:- {article.contributors}</Typography>
+          {/* <Typography variant="h6">By:- {article.name}</Typography> */}
           <Typography variant="body2">
             {moment(article.createdAt).fromNow()}
           </Typography>

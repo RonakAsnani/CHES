@@ -5,3 +5,14 @@
  color: #264653;
  font-size: 42px;
 }
+
+.pastevent-header{
+    font-weight: 600;
+ color: #264653;
+ font-size: 42px;
+}
+
+.pastevent-text{
+    font-weight: 400;
+    color: #374151;
+}
