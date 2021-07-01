@@ -52,9 +52,9 @@ const Home = () => {
         onAfterRender={() => {}}
         onFailure={() => {}}
       />
-      <h3 style={{ textAlign: "center" }}>Our Instagram Feed</h3>
-      <br />
-      <Carousel slides={slides} autoplay={true} interval={2000} arrow={false} />
+      <h3 style={{ textAlign: "center", fontWeight: "800", color: "#264653", fontSize: "42px" }}>Our Instagram Feed</h3>
+      <hr style={{ width: "25%", backgroundColor: "#e9c46a", height: "4px", marginBottom: "30px" }} />
+      <Carousel slides={slides} autoplay={true} interval={3000} arrow={false} />
       <br />
       <br />
     </React.Fragment>

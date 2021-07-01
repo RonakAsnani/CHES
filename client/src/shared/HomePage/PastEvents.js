@@ -25,8 +25,8 @@ const Pastevents = (props) => {
                         <img src={PSiphon} className="img-fluid" />
                     </div>
                     <div className="col-md-6">
-                        <h2 style={{ fontSize: "42px" }}>Siphon</h2>
-                        <p>Siphon is the annual departmental fest of Chemical Engineering Deartment, SVNIT. It is a two day fest, organised in the first month of even semester. Events under Siphon are planned to improve the general chemical knowlege of the masses through games like Murder-Mystery, Bid-Wisely, The Lucky Element, Chemical Tambola. Other events like Starch Walk, Plasti-Psycho are pure fun games with a chemical twist. Many of the events have cash prizes up for grab.</p>
+                        <h2 className="pastevent-header">Siphon</h2>
+                        <p className="pastevent-text">Siphon is the annual departmental fest of Chemical Engineering Deartment, SVNIT. It is a two day fest, organised in the first month of even semester. Events under Siphon are planned to improve the general chemical knowlege of the masses through games like Murder-Mystery, Bid-Wisely, The Lucky Element, Chemical Tambola. Other events like Starch Walk, Plasti-Psycho are pure fun games with a chemical twist. Many of the events have cash prizes up for grab.</p>
                     </div>
                 </div>
             </div>
@@ -36,8 +36,8 @@ const Pastevents = (props) => {
             <div className="container mb-5">
                 <div className="row align-items-center justify-content-between">
                     <div className="col-md-6">
-                        <h2 style={{ fontSize: "42px" }}>Eureka</h2>
-                        <p>This initiative was started in October 2019 to help students develop a
+                        <h2 className="pastevent-header">Eureka</h2>
+                        <p className="pastevent-text">This initiative was started in October 2019 to help students develop a
                             research-orientated mind. Participating students were assigned problem
                             statements like Self-healing Corrosion-resistant coatings, Innovation in electric
                             batteries, Plastic to Fuel, Nanomaterials, Vector Entrapment, Electrostatic
@@ -63,8 +63,8 @@ const Pastevents = (props) => {
                         <img src={PStock} className="img-fluid" />
                     </div>
                     <div className="col-md-6">
-                        <h2 style={{ fontSize: "42px" }}>Stock Mania</h2>
-                        <p>Rags or Riches?
+                        <h2 className="pastevent-header">Stock Mania</h2>
+                        <p className="pastevent-text">Rags or Riches?
                             In investing, what is comfortable is rarely profitable. It is about being smarter and more disciplined than the rest.
 
                             ChES brings a Pre-Event, for our much awaited annual fest, Siphon 6.0, for you get a better understanding of trading strategies and portfolio management through Stock Mania!
