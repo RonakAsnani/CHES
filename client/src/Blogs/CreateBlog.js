@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Typography, TextField, Button, Paper } from "@material-ui/core";
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -24,6 +26,7 @@ function CreateBlog({ currentId, setCurrentId }) {
   });
   const [content, setContent] = useState("");
   const [files, setFiles] = useState([]);
+  const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
   const classes = useStyles();
 
@@ -46,8 +49,10 @@ function CreateBlog({ currentId, setCurrentId }) {
       dispatch(createArticle({ ...postData, name: user?.result?.name }));
     }
     clear();
-
-    history.push("/");
+    setOpen(true);
+    setTimeout(() => {
+      history.push("/");
+    }, 3000);
   };
 
   useEffect(() => {
@@ -74,6 +79,20 @@ function CreateBlog({ currentId, setCurrentId }) {
       </Paper>
     );
   }
+
+  function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    history.push("/");
+
+    setOpen(false);
+  };
 
   return (
     <React.Fragment>
@@ -131,6 +150,11 @@ function CreateBlog({ currentId, setCurrentId }) {
               }
             />
           </div>
+          <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success">
+              ARTICLE POSTED!
+            </Alert>
+          </Snackbar>
           <Button
             className={classes.buttonSubmit}
             variant="contained"

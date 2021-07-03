@@ -36,14 +36,19 @@ const Auth = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (isSignUp) {
-      dispatch(signup(formData, history));
-      // const user = JSON.parse(localStorage.getItem("profile"));
-      // props.setUser(user);
-      history.push("/");
-    } else {
-      dispatch(signin(formData, history));
+    try {
+      if (isSignUp) {
+        dispatch(signup(formData, history));
+        // const user = JSON.parse(localStorage.getItem("profile"));
+        // props.setUser(user);
+        // history.push("/");
+      } else {
+        dispatch(signin(formData, history));
+      }
+    } catch (error) {
+      alert(error.message);
     }
+
   };
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

@@ -127,6 +127,69 @@ export default function MediaCard() {
               <CardContent>
                 <h5>Dr. Sarita Kalla</h5>
                 <p>Co-Chairman</p>
+                <a target="_blank" href="https://www.linkedin.com/company/chemical-engineering-society-svnit/?viewAsMember=true">
+                <i className="fa fa-linkedin"></i>
+                </a>
+                <p>Assistant Professor at ChED, SVNIT</p>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </div>
+      </div>
+      <h4
+        style={{
+          textAlign: "center",
+          marginTop: "105px",
+          marginBottom: "20px",
+        }}
+      >
+        Core Team 2021-22
+      </h4>
+      <div className="row">
+        <div className="col-sm-12 col-md-4">
+          <Card style={{ margin: "0px 10px" }}>
+            <CardActionArea style={{ textAlign: "center" }}>
+              <img
+                className={classes.media1}
+                src={jaggu}
+                alt="Contemplative Reptile"
+              />
+              <CardContent>
+                <h5>Dr. Jogender Singh</h5>
+                <p>Co-Chairman</p>
+                <p>Assistant Professor at ChED, SVNIT</p>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </div>
+
+        <div className="col-sm-12 col-md-4">
+          <Card style={{ margin: "0px 10px" }}>
+            <CardActionArea style={{ textAlign: "center" }}>
+              <img
+                className={classes.media1}
+                src={meghal}
+                alt="Contemplative Reptile"
+              />
+              <CardContent>
+                <h5>Dr. Meghal Desai</h5>
+                <p>Chairman</p>
+                <p>Associate Professor at ChED, SVNIT</p>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </div>
+        <div className="col-sm-12 col-md-4">
+          <Card style={{ margin: "0px 10px" }}>
+            <CardActionArea style={{ textAlign: "center" }}>
+              <img
+                className={classes.media1}
+                src={sarita}
+                alt="Contemplative Reptile"
+              />
+              <CardContent>
+                <h5>Dr. Sarita Kalla</h5>
+                <p>Co-Chairman</p>
                 <p>Assistant Professor at ChED, SVNIT</p>
               </CardContent>
             </CardActionArea>

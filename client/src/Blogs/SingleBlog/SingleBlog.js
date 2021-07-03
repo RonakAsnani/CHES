@@ -31,7 +31,7 @@ const SingleBlog = () => {
                             article.length > 1 ? <CircularProgress /> :
                                 (
                                     <div>
-                                        <h4 style={{ textAlign: "center" }}>Published By {article.name}, {article.contributors}</h4>
+                                        <h4 style={{ textAlign: "center" }}>Published By {article.contributors}</h4>
                                         <h1 style={{ textAlign: "center" }}>{article.title}</h1>
                                         <hr />
                                         <img style={{ display: "flex", margin: "auto" }} className="article-img" src={article.selectedFile} />

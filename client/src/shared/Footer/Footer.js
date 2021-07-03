@@ -16,7 +16,7 @@ function Footer() {
             </p>
           </div>
           <div className="col-md-4 col-sm-6">
-            <a style={{ color: "#E9C46A" }} href="google.com">
+            <a target="_blank" style={{ color: "#E9C46A" }} href="https://www.aiche.org/">
               AICHE
             </a>
             <p style={{ color: "white" }}>
@@ -28,23 +28,28 @@ function Footer() {
             <a style={{ color: "#E9C46A" }}>CONTACT US</a>
             <ul className="list-inline">
               <li className="list-inline-item pr-2">
-                <a href="https://www.instagram.com/ches_svnit_aiche/?hl=en">
+                <a target="_blank" href="https://www.instagram.com/ches_svnit_aiche/?hl=en">
                   <i className="fa fa-instagram text-white"></i>
                 </a>
               </li>
               <li className="list-inline-item pr-2">
-                <a href="https://www.linkedin.com/company/chemical-engineering-society-svnit/mycompany/?viewAsMember=true">
+                <a target="_blank" href="https://www.linkedin.com/company/chemical-engineering-society-svnit/?viewAsMember=true">
                   <i className="fa fa-linkedin text-white"></i>
                 </a>
               </li>
               <li className="list-inline-item pr-2">
-                <a href="https://www.youtube.com/channel/UCdRZ6R7sBns_mx-nNixWyfg">
+                <a target="_blank" href="https://www.youtube.com/channel/UCdRZ6R7sBns_mx-nNixWyfg">
                   <i className="fa fa-youtube text-white"></i>
                 </a>
               </li>
               <li className="list-inline-item pr-2">
-                <a href="https://www.facebook.com/ches.svnit.aiche/photos/?ref=page_internal">
+                <a target="_blank" href="https://www.facebook.com/ches.svnit.aiche/photos/?ref=page_internal">
                   <i className="fa fa-facebook text-white"></i>
+                </a>
+              </li>
+              <li className="list-inline-item pr-2">
+                <a target="_blank" href="mailto: ches.svnit@gmail.com">
+                  <i className="fa fa-google text-white"></i>
                 </a>
               </li>
             </ul>

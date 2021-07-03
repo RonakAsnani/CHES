@@ -1,4 +1,6 @@
 import { AUTH, UPDATE } from "../constants/actionTypes";
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 import * as api from "../api/index.js";
 
@@ -14,6 +16,7 @@ export const signin = (formData, history) => async (dispatch) => {
     history.push("/");
   } catch (error) {
     console.log(error);
+    alert(error);
   }
 };
 
@@ -30,6 +33,7 @@ export const signup = (formData, history) => async (dispatch) => {
     history.push("/");
   } catch (error) {
     console.log(error, "hello");
+    alert(error.message);
   }
 };
 

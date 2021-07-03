@@ -2,8 +2,8 @@
     width: 450px;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
     .article-img{
-        width: 250px;
+        width: 280px;
     }
   }
