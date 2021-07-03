@@ -42,7 +42,7 @@ function App() {
             <Route path="/blogs/create" exact>
               <CreateBlog currentId={currentId} setCurrentId={setCurrentId} />
             </Route>
-        )}
+          )}
           <Route component={SingleBlog} path="/blogs/:id"></Route>
           <Route path="/about" component={About} exact></Route>
           <Route path="/auth" component={Auth} exact></Route>
