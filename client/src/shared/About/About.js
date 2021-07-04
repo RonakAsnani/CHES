@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -41,6 +42,31 @@ const useStyles = makeStyles({
 
 export default function MediaCard() {
   const classes = useStyles();
+
+  // const [seniors, setSeniors] = useState([]);
+
+  let seniors = [];
+
+  useEffect(() => {
+
+  }, [seniors])
+
+  axios.get("https://ches-svnit.herokuapp.com/user")
+    .then(res => {
+      // console.log(res.data);
+      res.data.map(user => {
+        if (user.senior === "1") {
+          // setSeniors({ ...user });
+          seniors.push(user);
+        }
+      })
+    })
+    .catch(err => {
+      console.log(err);
+    })
+
+
+  console.log(seniors);
 
   return (
     <div>
@@ -128,7 +154,7 @@ export default function MediaCard() {
                 <h5>Dr. Sarita Kalla</h5>
                 <p>Co-Chairman</p>
                 <a target="_blank" href="https://www.linkedin.com/company/chemical-engineering-society-svnit/?viewAsMember=true">
-                <i className="fa fa-linkedin"></i>
+                  <i className="fa fa-linkedin"></i>
                 </a>
                 <p>Assistant Professor at ChED, SVNIT</p>
               </CardContent>
@@ -146,55 +172,28 @@ export default function MediaCard() {
         Core Team 2021-22
       </h4>
       <div className="row">
-        <div className="col-sm-12 col-md-4">
-          <Card style={{ margin: "0px 10px" }}>
-            <CardActionArea style={{ textAlign: "center" }}>
-              <img
-                className={classes.media1}
-                src={jaggu}
-                alt="Contemplative Reptile"
-              />
-              <CardContent>
-                <h5>Dr. Jogender Singh</h5>
-                <p>Co-Chairman</p>
-                <p>Assistant Professor at ChED, SVNIT</p>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </div>
-
-        <div className="col-sm-12 col-md-4">
-          <Card style={{ margin: "0px 10px" }}>
-            <CardActionArea style={{ textAlign: "center" }}>
-              <img
-                className={classes.media1}
-                src={meghal}
-                alt="Contemplative Reptile"
-              />
-              <CardContent>
-                <h5>Dr. Meghal Desai</h5>
-                <p>Chairman</p>
-                <p>Associate Professor at ChED, SVNIT</p>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </div>
-        <div className="col-sm-12 col-md-4">
-          <Card style={{ margin: "0px 10px" }}>
-            <CardActionArea style={{ textAlign: "center" }}>
-              <img
-                className={classes.media1}
-                src={sarita}
-                alt="Contemplative Reptile"
-              />
-              <CardContent>
-                <h5>Dr. Sarita Kalla</h5>
-                <p>Co-Chairman</p>
-                <p>Assistant Professor at ChED, SVNIT</p>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </div>
+        {
+          seniors.map((senior) => {
+            return (
+              <div className="col-sm-12 col-md-4">
+                <Card style={{ margin: "0px 10px" }}>
+                  <CardActionArea style={{ textAlign: "center" }}>
+                    <img
+                      className={classes.media1}
+                      src={senior.selectedFile}
+                      alt="Contemplative Reptile"
+                    />
+                    <CardContent>
+                      <h5>{senior.name}</h5>
+                      <p>{senior.postion}</p>
+                      <p>Assistant Professor at ChED, SVNIT</p>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </div>
+            )
+          })
+        }
       </div>
       <Card className={classes.root1}>
         <h4 style={{ textAlign: "center", marginTop: "5px" }}>Our Mission</h4>
@@ -227,6 +226,6 @@ export default function MediaCard() {
           </CardContent>
         </CardActionArea>
       </Card>
-    </div>
+    </div >
   );
 }
