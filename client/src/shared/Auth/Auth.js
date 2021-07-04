@@ -18,6 +18,8 @@ import { useHistory } from "react-router-dom";
 import { signin, signup } from "../../actions/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// import Snackbar from '@material-ui/core/Snackbar';
+// import MuiAlert from '@material-ui/lab/Alert';
 
 const initialState = {
   firstName: "",
@@ -32,6 +34,7 @@ const Auth = (props) => {
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
+  // const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
   const [formData, setFormData] = useState(initialState);
@@ -41,11 +44,20 @@ const Auth = (props) => {
     try {
       if (isSignUp) {
         dispatch(signup(formData, history));
+
         // const user = JSON.parse(localStorage.getItem("profile"));
         // props.setUser(user);
         // history.push("/");
+        // setOpen(true);
+        // setTimeout(() => {
+        //   history.push("/");
+        // }, 4000);
       } else {
         dispatch(signin(formData, history));
+        // setOpen(true);
+        // setTimeout(() => {
+        //   history.push("/");
+        // }, 4000);
       }
     } catch (error) {
       alert(error.message);
@@ -62,6 +74,20 @@ const Auth = (props) => {
     setIsSignUp((prevIsSignUp) => !prevIsSignUp);
     setShowPassword(false);
   };
+
+  // function Alert(props) {
+  //   return <MuiAlert elevation={6} variant="filled" {...props} />;
+  // }
+
+  // const handleClose = (event, reason) => {
+  //   if (reason === 'clickaway') {
+  //     return;
+  //   }
+
+  //   history.push("/");
+
+  //   setOpen(false);
+  // };
 
   return (
     <Container className={classes.containerForm} component="main" maxWidth="xs">
@@ -98,7 +124,7 @@ const Auth = (props) => {
             {isSignUp && (
               <Input
                 name="confirmPassword"
-                label="Repead Password"
+                label="Repeat Password"
                 handleChange={handleChange}
                 type="password"
               />
@@ -121,6 +147,12 @@ const Auth = (props) => {
           >
             {isSignUp ? "Sign Up" : "Sign In"}
           </Button>
+
+          {/* <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success">
+              Authentication Successfull
+            </Alert>
+          </Snackbar> */}
 
           <Grid container justify="flex-end">
             <Grid item>
