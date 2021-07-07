@@ -152,9 +152,6 @@ export default function MediaCard() {
               <CardContent>
                 <h5>Dr. Sarita Kalla</h5>
                 <p>Co-Chairman</p>
-                <a target="_blank" href="https://www.linkedin.com/company/chemical-engineering-society-svnit/?viewAsMember=true">
-                  <i className="fa fa-linkedin"></i>
-                </a>
                 <p>Assistant Professor at ChED, SVNIT</p>
               </CardContent>
             </CardActionArea>
@@ -172,57 +169,57 @@ export default function MediaCard() {
       </h4>
       <div className="row">
         {
-          seniors.length == 0 ? <CircularProgress /> : 
-          seniors?.map((senior) => {
-            console.log(senior);
-            return (
-              <div className="col-sm-12 col-md-4">
-                <Card style={{ margin: "0px 10px" }}>
-                  <CardActionArea style={{ textAlign: "center" }}>
-                    <img
-                      className={classes.media1}
-                      src={senior.selectedFile}
-                      alt="Contemplative Reptile"
-                    />
-                    <CardContent>
-                      <h5>{senior.name}</h5>
-                      <a target="_blank" href={senior.linkedIn}>
-                        <i className="fa fa-linkedin"></i>
-                      </a>
-                      <p>{senior.position}</p>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </div>
-            )
-          })
+          seniors.length == 0 ? <CircularProgress /> :
+            seniors?.map((senior) => {
+              console.log(senior);
+              return (
+                <div className="col-sm-12 col-md-4">
+                  <Card style={{ margin: "0px 10px" }}>
+                    <CardActionArea style={{ textAlign: "center" }}>
+                      <img
+                        className={classes.media1}
+                        src={senior.selectedFile}
+                        alt="Contemplative Reptile"
+                      />
+                      <CardContent>
+                        <h5>{senior.name}</h5>
+                        <a target="_blank" href={senior.linkedIn}>
+                          <i className="fa fa-linkedin"></i>
+                        </a>
+                        <p>{senior.position}</p>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </div>
+              )
+            })
         }
       </div>
       <div className="row">
         {
-          juniors.length == 0 ? <CircularProgress style={{textAlign: "center"}} /> : 
-          juniors?.map((junior) => {
-            return (
-              <div className="col-sm-12 col-md-4">
-                <Card style={{ margin: "0px 10px" }}>
-                  <CardActionArea style={{ textAlign: "center" }}>
-                    <img
-                      className={classes.media1}
-                      src={junior.selectedFile}
-                      alt="Contemplative Reptile"
-                    />
-                    <CardContent>
-                      <h5>{junior.name}</h5>
-                      <a target="_blank" href={junior.linkedIn}>
-                        <i className="fa fa-linkedin"></i>
-                      </a>
-                      <p>{junior.position}</p>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </div>
-            )
-          })
+          juniors.length == 0 ? <CircularProgress style={{ textAlign: "center" }} /> :
+            juniors?.map((junior) => {
+              return (
+                <div className="col-sm-12 col-md-4">
+                  <Card style={{ margin: "0px 10px" }}>
+                    <CardActionArea style={{ textAlign: "center" }}>
+                      <img
+                        className={classes.media1}
+                        src={junior.selectedFile}
+                        alt="Contemplative Reptile"
+                      />
+                      <CardContent>
+                        <h5>{junior.name}</h5>
+                        <a target="_blank" href={junior.linkedIn}>
+                          <i className="fa fa-linkedin"></i>
+                        </a>
+                        <p>{junior.position}</p>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </div>
+              )
+            })
         }
       </div>
       <Card className={classes.root1}>
