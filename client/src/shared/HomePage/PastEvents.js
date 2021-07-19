@@ -5,10 +5,40 @@ import './PastEvents.css';
 import PSiphon from '../../assets/images/Homepage/past_events_siphon.png';
 import PEureka from '../../assets/images/Homepage/past_events_eureka.png';
 import PStock from '../../assets/images/Homepage/past_events_stockMania.png';
+import recruitment from '../../assets/images/Homepage/recruitment.jpeg';
 
 const Pastevents = (props) => {
     return (
         <React.Fragment>
+
+            <div className="container" style={{ marginTop: "50px" }}>
+                <div className="row" style={{ marginBottom: "30px" }}>
+                    <div className="col-lg-6 mx-auto text-center">
+                        <h2 className="pastevents-header">🎉We are Recruiting!!!🎉</h2>
+                        <hr style={{ width: "25%", backgroundColor: "#e9c46a", height: "4px" }} />
+                    </div>
+                </div>
+            </div>
+
+            <div className="container mb-5">
+                <div className="row align-items-center justify-content-between">
+                    <div className="col-md-12 col-lg-12">
+                        <div class="card" style={{ width: "28rem", margin: "auto" }}>
+                            <img class="card-img-top" src={recruitment} alt="Card image cap" />
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text">After a fabulous orientation with the sophomores where we discussed about the various committee profiles, the events of ChES and the roles, the sophomores are going to undertake for the next session,  we are <strong>now recruiting</strong> for the next academic session.
+
+                                    Even if you missed  the orientation due to certain reasons, don't worry you can still apply .
+
+                                    Discover what you are truly passionate about by joining ChES. Register through the button below:</p>
+                                <a href="https://forms.gle/u6VkokiduNwKozF7A" target="_blank" class="btn btn-primary">REGISTER</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div className="container" style={{ marginTop: "50px" }}>
                 <div className="row" style={{ marginBottom: "30px" }}>
                     <div className="col-lg-6 mx-auto text-center">
