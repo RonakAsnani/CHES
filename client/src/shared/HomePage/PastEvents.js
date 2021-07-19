@@ -23,11 +23,11 @@ const Pastevents = (props) => {
             <div className="container mb-5">
                 <div className="row align-items-center justify-content-between">
                     <div className="col-md-12 col-lg-12">
-                        <div class="card" style={{ width: "28rem", margin: "auto" }}>
-                            <img class="card-img-top" src={recruitment} alt="Card image cap" />
-                            <div class="card-body">
-                                <h5 class="card-title"></h5>
-                                <p class="card-text">After a fabulous orientation with the sophomores where we discussed about the various committee profiles, the events of ChES and the roles, the sophomores are going to undertake for the next session,  we are <strong>now recruiting</strong> for the next academic session.
+                        <div className="card recruitment" style={{ width: "25rem", margin: "auto" }}>
+                            <img className="card-img-top" src={recruitment} alt="Card image cap" />
+                            <div className="card-body">
+                                <h5 className="card-title"></h5>
+                                <p className="card-text">After a fabulous orientation with the sophomores where we discussed about the various committee profiles, the events of ChES and the roles, the sophomores are going to undertake for the next session,  we are <strong>now recruiting</strong> for the next academic session.
 
                                     Even if you missed  the orientation due to certain reasons, don't worry you can still apply .
 
