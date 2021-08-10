@@ -11,16 +11,16 @@ const Pastevents = (props) => {
     return (
         <React.Fragment>
 
-            <div className="container" style={{ marginTop: "50px" }}>
+            {/* <div className="container" style={{ marginTop: "50px" }}>
                 <div className="row" style={{ marginBottom: "30px" }}>
                     <div className="col-lg-6 mx-auto text-center">
                         <h2 className="pastevents-header">🎉We are Recruiting!!!🎉</h2>
                         <hr style={{ width: "25%", backgroundColor: "#e9c46a", height: "4px" }} />
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-            <div className="container mb-5">
+            {/* <div className="container mb-5">
                 <div className="row align-items-center justify-content-between">
                     <div className="col-md-12 col-lg-12">
                         <div className="card recruitment" style={{ width: "25rem", margin: "auto" }}>
@@ -37,7 +37,7 @@ const Pastevents = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div className="container" style={{ marginTop: "50px" }}>
                 <div className="row" style={{ marginBottom: "30px" }}>
