@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { getArticles } from "../../actions/articles";
 import Banner from "./Banner";
-import Articles from "./HomeArticles/Articles";
+
 import PastEvents from "./PastEvents";
 import InstagramEmbed from "react-instagram-embed";
 import { Carousel } from "3d-react-carousal";
@@ -76,5 +76,3 @@ const Home = () => {
     </React.Fragment>
   );
 };
-
-export default Home;
