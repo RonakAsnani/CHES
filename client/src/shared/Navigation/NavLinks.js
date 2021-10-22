@@ -46,9 +46,9 @@ const NavLinks = () => {
         <li>
           <NavLink to="/siphon">SIPHON</NavLink>
         </li>
-        {/* <li>
-          <NavLink to="/eureka">EUREKA!</NavLink>
-        </li> */}
+        <li>
+          <a href="https://cheseureka.netlify.app/" target="_blank">EUREKA!</a>
+        </li>
         <li>
           <NavLink to="/blogs">BLOGS</NavLink>
         </li>

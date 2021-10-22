@@ -98,16 +98,32 @@ const Auth = (props) => {
         <Typography variant="h5">{isSignUp ? "Sign Up" : "Sign In"}</Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
-            {isSignUp && (
-              <>
-                <Input
-                  name="name"
-                  label="Name"
-                  handleChange={handleChange}
-                  autoFocus
-                />
-              </>
-            )}
+            <Input
+              name="name"
+              label="Name"
+              handleChange={handleChange}
+              autoFocus
+            />
+            {
+              isSignUp && (
+              <Input
+                name="title"
+                label="Title"
+                handleChange={handleChange}
+                type="text"
+              />
+            )
+            }
+            {
+              isSignUp && (
+              <Input
+                name="title"
+                label="Title"
+                handleChange={handleChange}
+                type="text"
+              />
+            )
+            }
             <Input
               name="email"
               label="Email Address"
