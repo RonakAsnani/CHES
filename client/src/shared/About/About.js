@@ -11,9 +11,9 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import logo from "../../assets/images/CHES-LOGO-1.png";
 import NearMeIcon from "@material-ui/icons/NearMe";
-import meghal from "../../assets/images/profiles/Meghal.png";
+import alka from "../../assets/images/Dr_Alka_mungray.jpg";
 import jaggu from "../../assets/images/jogender.jpg";
-import sarita from "../../assets/images/sarita.jpg";
+import sundar from "../../assets/images/sundar.jpg";
 
 const useStyles = makeStyles({
   root: {
@@ -130,11 +130,11 @@ export default function MediaCard() {
             <CardActionArea style={{ textAlign: "center" }}>
               <img
                 className={classes.media1}
-                src={meghal}
+                src={alka}
                 alt="Contemplative Reptile"
               />
               <CardContent>
-                <h5>Dr. Meghal Desai</h5>
+                <h5>Dr. Alka A. Mungray</h5>
                 <p>Chairman</p>
                 <p>Associate Professor at ChED, SVNIT</p>
               </CardContent>
@@ -146,11 +146,11 @@ export default function MediaCard() {
             <CardActionArea style={{ textAlign: "center" }}>
               <img
                 className={classes.media1}
-                src={sarita}
+                src={sundar}
                 alt="Contemplative Reptile"
               />
               <CardContent>
-                <h5>Dr. Sarita Kalla</h5>
+                <h5>Dr. S.K. Sundar</h5>
                 <p>Co-Chairman</p>
                 <p>Assistant Professor at ChED, SVNIT</p>
               </CardContent>
