@@ -9,6 +9,7 @@ const articleReducer = (articles = [], action) => {
         case CREATE:
             return [...articles, action.payload];
         case UPDATE:
+            return articles.map((article) => article._id === action.payload._id ? action.payload : article);
         case LIKE:    
             return articles.map((article) => article._id === action.payload ? action.payload : article);
         case DELETE:

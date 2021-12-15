@@ -169,7 +169,7 @@ export default function MediaCard() {
       </h4>
       <div className="row">
         {
-          seniors.length == 0 ? <CircularProgress /> :
+          seniors.length == 0 ? <CircularProgress style={{margin: "auto"}} /> :
             seniors?.map((senior) => {
               console.log(senior);
               return (
@@ -197,7 +197,7 @@ export default function MediaCard() {
       </div>
       <div className="row">
         {
-          juniors.length == 0 ? <CircularProgress style={{ textAlign: "center" }} /> :
+          juniors.length == 0 ? <CircularProgress style={{ margin: "auto" }} /> :
             juniors?.map((junior) => {
               return (
                 <div className="col-sm-12 col-md-4">

@@ -38,6 +38,8 @@ function CreateBlog({ currentId, setCurrentId }) {
     setContent(value);
   };
 
+  console.log(currentId);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(postData);
