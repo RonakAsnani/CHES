@@ -43,7 +43,7 @@ const Pastevents = (props) => {
                 <div className="row" style={{ marginBottom: "30px" }}>
                     <div className="col-lg-6 mx-auto text-center">
                         <h2 className="pastevents-header">Past Events</h2>
-                        <hr style={{ width: "25%", backgroundColor: "#e9c46a", height: "4px" }} />
+                        <hr style={{ width: "25%", backgroundColor: "#e9c46a", height: "4px", margin: "auto" }} />
                     </div>
                 </div>
             </div>
